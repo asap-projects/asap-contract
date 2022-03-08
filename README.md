@@ -2,7 +2,7 @@
 
 ![Start Now!!](doc/_static/logo.png "ASAP Logo")
 
-[![Build Matrix](https://github.com/asap-projects/asap-common/actions/workflows/cmake-build.yml/badge.svg?branch=master)](https://github.com/asap-projects/asap-contract/actions/workflows/cmake-build.yml)
+[![Build Matrix](https://github.com/asap-projects/asap-contract/actions/workflows/cmake-build.yml/badge.svg?branch=master)](https://github.com/asap-projects/asap-contract/actions/workflows/cmake-build.yml)
 
 ## [Project Documentation](https://asap-projects.github.io/asap-contract/asap_contract_master/html)
 
@@ -18,7 +18,7 @@ Additionally, optional helpers for unit testing contracts without the need for
 death tests are provided as a separate library.
 
 For a full documentation of what is available refer to the
-[project docs](https://asap-projects.github.io/asap-common/).
+[project docs](https://asap-projects.github.io/asap-contract/).
 
 ## Getting the code
 
