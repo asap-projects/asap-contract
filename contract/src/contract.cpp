@@ -13,6 +13,7 @@
 #include <cassert>
 #include <csetjmp>
 #include <iostream>
+#include <memory>
 
 #include <contract/contract.h>
 
