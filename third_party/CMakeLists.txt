@@ -5,3 +5,13 @@
 # ===-----------------------------------------------------------------------===#
 
 message("=> [third-party modules]")
+
+# ------------------------------------------------------------------------------
+# asap::common
+# ------------------------------------------------------------------------------
+
+FetchContent_Declare(
+  asap_common
+  GIT_REPOSITORY https://github.com/asap-projects/asap-common.git
+  GIT_TAG origin/master)
+FetchContent_MakeAvailable(asap_common)
