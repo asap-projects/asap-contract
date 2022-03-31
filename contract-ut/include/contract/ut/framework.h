@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include <contract/asap_contract_api.h>
+#include <contract-ut/asap_contract-ut_api.h>
 
 #include <csetjmp>
 #include <cstdlib>
@@ -35,7 +35,7 @@ enum class Verbosity {
  * while a value of Verbosity::VERBOSE will produce the same output than the
  * default handler.
  */
-void ASAP_CONTRACT_API SetVerbosity(enum Verbosity verbosity);
+void ASAP_CONTRACT_UT_API SetVerbosity(enum Verbosity verbosity);
 
 /*!
  * \brief Prepare the violation handler for testing.
@@ -58,18 +58,18 @@ void ASAP_CONTRACT_API SetVerbosity(enum Verbosity verbosity);
  * \see EXPECT_VIOLATES_CONTRACT
  * \see ASSERT_VIOLATES_CONTRACT
  */
-void ASAP_CONTRACT_API PrepareForTesting();
+void ASAP_CONTRACT_UT_API PrepareForTesting();
 
 namespace details {
 /// Push a contract check for nested violation checks.
-void ASAP_CONTRACT_API ContractCheckPush();
+void ASAP_CONTRACT_UT_API ContractCheckPush();
 /// Pop a contract check for nested violation checks.
-void ASAP_CONTRACT_API ContractCheckPop();
+void ASAP_CONTRACT_UT_API ContractCheckPop();
 
 /// Stack environment saved/restored with the setjmp/longjmp used to handle
 /// contract violations during testing.
 // NOLINTNEXTLINE(cppcoreguidelines-avoid-non-const-global-variables)
-extern ASAP_CONTRACT_API jmp_buf jmp_env;
+ASAP_CONTRACT_UT_API extern jmp_buf jmp_env;
 
 } // namespace details
 

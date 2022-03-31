@@ -25,6 +25,31 @@ namespace asap::contract {
 
 namespace {
 
+// NOLINTNEXTLINE(cppcoreguidelines-avoid-non-const-global-variables)
+int contract_check_active = 0;
+
+// NOLINTNEXTLINE(cppcoreguidelines-avoid-non-const-global-variables)
+Verbosity verbosity_level = Verbosity::QUIET;
+
+} // namespace
+
+namespace details {
+
+// NOLINTNEXTLINE(cppcoreguidelines-avoid-non-const-global-variables)
+jmp_buf jmp_env;
+
+void ContractCheckPush() {
+  contract_check_active++;
+}
+
+void ContractCheckPop() {
+  contract_check_active--;
+}
+
+} // namespace details
+
+namespace {
+
 void PrintViolation(const Violation *violation) {
   std::cerr << violation->file << ":" << violation->line << ": in "
             << violation->function << ": " << violation->type << " '"
@@ -35,12 +60,6 @@ void PrintViolation(const Violation *violation) {
   PrintViolation(violation);
   abort();
 }
-
-// NOLINTNEXTLINE(cppcoreguidelines-avoid-non-const-global-variables)
-int contract_check_active = 0;
-
-// NOLINTNEXTLINE(cppcoreguidelines-avoid-non-const-global-variables)
-Verbosity verbosity_level = Verbosity::QUIET;
 
 [[noreturn]] void TestViolationHandler(const Violation *violation) {
   if (contract_check_active == 0) {
@@ -59,21 +78,6 @@ Verbosity verbosity_level = Verbosity::QUIET;
 }
 
 } // namespace
-
-namespace details {
-
-// NOLINTNEXTLINE(cppcoreguidelines-avoid-non-const-global-variables)
-jmp_buf jmp_env;
-
-void ContractCheckPush() {
-  contract_check_active++;
-}
-
-void ContractCheckPop() {
-  contract_check_active--;
-}
-
-} // namespace details
 
 void SetVerbosity(Verbosity verbosity) {
   verbosity_level = verbosity;
