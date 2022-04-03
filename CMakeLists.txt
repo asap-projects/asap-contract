@@ -205,6 +205,14 @@ if(ASAP_BUILD_TESTS)
   include(CTest)
 endif()
 
+# ------------------------------------------------------------------------------
+# Top level code generation
+# ------------------------------------------------------------------------------
+
+# Generate version-header
+configure_file(templates/version.h.in
+               ${CMAKE_CURRENT_BINARY_DIR}/include/asap/asap-version.h)
+
 # Generate a clangd configuration file that points to the compilation database
 # in the cmake build directory. We need to do this as the build directory is
 # different for every preset and can be different as well when the user decides
