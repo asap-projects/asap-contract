@@ -98,6 +98,10 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
+# Define the following alias variables used by the common cmake functions
+set(${PROJECT_NAME}_BUILD_TESTS ${ASAP_BUILD_TESTS})
+set(${PROJECT_NAME}_BUILD_EXAMPLES ${ASAP_BUILD_EXAMPLES})
+
 # ------------------------------------------------------------------------------
 # Additional CMake modules
 # ------------------------------------------------------------------------------
@@ -186,8 +190,7 @@ if(ASAP_BUILD_TESTS)
   include(GoogleSanitizers)
   include(CodeCoverage)
   # Enable this target when the project has test cases
-  asap_add_code_coverage_all_targets(EXCLUDE */test/* *googlemock* *googletest*
-                                     /usr/*)
+  # asap_add_code_coverage_all_targets()
   include(Valgrind)
 
   cpmaddpackage(
