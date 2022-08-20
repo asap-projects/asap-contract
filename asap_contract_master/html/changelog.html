@@ -281,11 +281,33 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
+   1.0.2 (2022-08-20)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#features">
+     Features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bug-fixes">
+     Bug Fixes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#documentation">
+     Documentation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
    1.0.1 (2022-03-15)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
+  <a class="reference internal nav-link" href="#id3">
    1.0.0 (2022-03-08)
   </a>
  </li>
@@ -310,11 +332,33 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
+   1.0.2 (2022-08-20)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#features">
+     Features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bug-fixes">
+     Bug Fixes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#documentation">
+     Documentation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
    1.0.1 (2022-03-15)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
+  <a class="reference internal nav-link" href="#id3">
    1.0.0 (2022-03-08)
   </a>
  </li>
@@ -330,19 +374,96 @@ title="Print to PDF"
                 
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">#</a></h1>
-<p>All notable changes to this project will be documented in this file. See <a class="reference external" href="https://github.com/conventional-changelog/standard-version">standard-version</a> for commit guidelines.</p>
+<p>All notable changes to this project will be documented in this file. See
+<a class="reference external" href="https://github.com/conventional-changelog/standard-version">standard-version</a>
+for commit guidelines.</p>
 <section id="id1">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v1.0.0...v1.0.1">1.0.1</a> (2022-03-15)<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v1.0.1...v1.0.2">1.0.2</a> (2022-08-20)<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>refactor build to use CPM for cmake dependencies and speedup build with ccache.</p></li>
+<li><p>add ccache support to dev container
+(<a class="reference external" href="http://github.com/abdes/asap/commit/202c27a628f7f35ae17f2df91c1d95f67360abea">202c27a</a>)</p></li>
+<li><p>make ccache usable on all platforms
+(<a class="reference external" href="http://github.com/abdes/asap/commit/412730f86679d7ccd350cadf5649b7a489376cae">412730f</a>)</p></li>
 </ul>
 </section>
+<section id="bug-fixes">
+<h3>Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="http://github.com/abdes/asap/issues/10">#10</a> no more template export header
+(<a class="reference external" href="http://github.com/abdes/asap/commit/dd8ffd5a8f36340963349c7ebcb7c1713c2f880a">dd8ffd5</a>)</p></li>
+<li><p><a class="reference external" href="http://github.com/abdes/asap/issues/11">#11</a> refactor compiler options
+management
+(<a class="reference external" href="http://github.com/abdes/asap/commit/78ae4933f2e263a55f6537e66347c6b11a24b961">78ae493</a>)</p></li>
+<li><p><a class="reference external" href="http://github.com/abdes/asap/issues/12">#12</a> disable used-but-marked-unused
+(<a class="reference external" href="http://github.com/abdes/asap/commit/6d42d83bfdd16123f05a69726058dc5f103143be">6d42d83</a>)</p></li>
+<li><p><a class="reference external" href="http://github.com/abdes/asap/issues/5">#5</a> update cmake/common to latest
+(<a class="reference external" href="http://github.com/abdes/asap/commit/5034b22d39e5cb54acd51baa0bf815dbdd82093b">5034b22</a>)</p></li>
+<li><p><a class="reference external" href="http://github.com/abdes/asap/issues/9">#9</a> remove no longer used function
+(<a class="reference external" href="http://github.com/abdes/asap/commit/5a7416f9563aae303d68ca2bb878fef97fbb7130">5a7416f</a>)</p></li>
+<li><p><strong>#6:</strong> properly setup install layout
+(<a class="reference external" href="http://github.com/abdes/asap/commit/71fd5d5ee6f4694a8d7d6994e3a09d5b2f18ce24">71fd5d5</a>),
+closes <a class="reference external" href="http://github.com/abdes/asap/issues/6">#6</a></p></li>
+<li><p><strong>#7:</strong> add <code class="docutils literal notranslate"><span class="pre">build</span></code> and <code class="docutils literal notranslate"><span class="pre">ops</span></code> commit types
+(<a class="reference external" href="http://github.com/abdes/asap/commit/0d9187e9d20788d3f0c5048bcb4deca4cf5280e3">0d9187e</a>),
+closes <a class="reference external" href="http://github.com/abdes/asap/issues/7">#7</a></p></li>
+<li><p><strong>#8:</strong> add standard ccov excluded directories by default
+(<a class="reference external" href="http://github.com/abdes/asap/commit/a8aabb31d3ea6b0c5a50e13bf366f092ca724537">a8aabb3</a>),
+closes <a class="reference external" href="http://github.com/abdes/asap/issues/8">#8</a></p></li>
+<li><p>add alaises used by cmake common functions
+(<a class="reference external" href="http://github.com/abdes/asap/commit/9c339069acd9ab6355f8156f2e8eaf81c382342c">9c33906</a>)</p></li>
+<li><p>alias variable to enable/disable building tests
+(<a class="reference external" href="http://github.com/abdes/asap/commit/3992b0f7d500e653532bd0f206489058d99ad2d0">3992b0f</a>)</p></li>
+<li><p>incorrect dll export preprocessor macros
+(<a class="reference external" href="http://github.com/abdes/asap/commit/4c077ee0c0b608ee83d0a50943206016c507033f">4c077ee</a>)</p></li>
+<li><p>typo in variable name to enable/disable building tests
+(<a class="reference external" href="http://github.com/abdes/asap/commit/9950fe2dcbe6c284e9ce32ce6a455e4a3a499ec4">9950fe2</a>)</p></li>
+<li><p>use only white-listed properties for interface library
+(<a class="reference external" href="http://github.com/abdes/asap/commit/227de026878beb9dd9679d0cad12cf25bce16c4a">227de02</a>)</p></li>
+</ul>
+</section>
+<section id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>add badge for OpenSSF best practices
+(<a class="reference external" href="http://github.com/abdes/asap/commit/26c01c8bcf98c6b47e6622dea91a6c6e10bc978c">26c01c8</a>)</p></li>
+<li><p>add CPM as preferred way of managing third party deps
+(<a class="reference external" href="http://github.com/abdes/asap/commit/5a33f70a15a64c84f0a13b4286460f9df20459a5">5a33f70</a>)</p></li>
+<li><p>add tutorial videos
+(<a class="reference external" href="http://github.com/abdes/asap/commit/cb13248244cddd0dc2c187893556fad7aa4f08b7">cb13248</a>)</p></li>
+<li><p>fix thumbnail and links of project docs video
+(<a class="reference external" href="http://github.com/abdes/asap/commit/1a6269eef8999504aba8105d4c446a93e41c988b">1a6269e</a>)</p></li>
+<li><p>how to report security vulnerabilities
+(<a class="reference external" href="http://github.com/abdes/asap/commit/46426e9d44f3c4e8ee0b3fdd98e2ee56d13f8890">46426e9</a>)</p></li>
+<li><p>improve the key features section
+(<a class="reference external" href="http://github.com/abdes/asap/commit/79119ba52f578a28dfdeb1ce59bba67c3fbcd3c1">79119ba</a>)</p></li>
+<li><p>include build status badges for all branches
+(<a class="reference external" href="http://github.com/abdes/asap/commit/2b98ae11ace8fa756c825686018a3a328ce27eca">2b98ae1</a>)</p></li>
+<li><p>revamp the project README
+(<a class="reference external" href="http://github.com/abdes/asap/commit/e72c4c3288d565b34b137ab785abe90370052258">e72c4c3</a>)</p></li>
+<li><p>rewrite the contributing section
+(<a class="reference external" href="http://github.com/abdes/asap/commit/c7e39c4cfa6033aac42befe5ed994089e601b6a0">c7e39c4</a>)</p></li>
+<li><p>update instructions for repo from template scenario
+(<a class="reference external" href="http://github.com/abdes/asap/commit/1cafdb57f86a4b61a736b3411791ae96ca684f33">1cafdb5</a>)</p></li>
+<li><p>update project docs video
+(<a class="reference external" href="http://github.com/abdes/asap/commit/c7f79fc64900cfa9ec3d2466300d1d32830b32f1">c7f79fc</a>)</p></li>
+</ul>
+</section>
+</section>
 <section id="id2">
-<h2>1.0.0 (2022-03-08)<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v1.0.0...v1.0.1">1.0.1</a> (2022-03-15)<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>refactor build to use CPM for cmake dependencies and speedup build with
+ccache.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>1.0.0 (2022-03-08)<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>This is the initial version of the contract checking library for C++ and its
 optional helper for unit testing contracts without death tests. For a full
-documentation of what is available refer to the
-<a class="reference external" href="https://asap-projects.github.io/asap-contract/">project docs</a>.</p>
+documentation of what is available refer to the <a class="reference external" href="https://asap-projects.github.io/asap-contract/">project
+docs</a>.</p>
 </section>
 </section>
 

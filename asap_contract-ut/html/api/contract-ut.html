@@ -379,7 +379,7 @@ of death tests.</p>
 <dt class="sig sig-object cpp" id="c.EXPECT_VIOLATES_CONTRACT">
 <span class="target" id="gtest_8h_1a9eaacad31c8e47c7c77ad5996ed88ce6"></span><span class="sig-name descname"><span class="n"><span class="pre">EXPECT_VIOLATES_CONTRACT</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">call</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.EXPECT_VIOLATES_CONTRACT" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Expect the statement to produce a contract violation. If the statement does not produce a contract, execution still continues. </p>
-<p>Use EXPECT when the condition should hold, but in cases where it doesn’t we can still get value out of continuing the test. The test will still ultimately fail at the end, though.</p>
+<p>Use EXPECT when the condition should hold, but in cases where it does not we can still get value out of continuing the test. The test will still ultimately fail at the end, though.</p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="#gtest_8h_1a0ea9e3c4ff7dbb2faf929eb825968ded"><span class="std std-ref">ASSERT_VIOLATES_CONTRACT</span></a> </p>
@@ -402,7 +402,7 @@ of death tests.</p>
 <dt class="sig sig-object cpp" id="c.ASSERT_VIOLATES_CONTRACT">
 <span class="target" id="gtest_8h_1a0ea9e3c4ff7dbb2faf929eb825968ded"></span><span class="sig-name descname"><span class="n"><span class="pre">ASSERT_VIOLATES_CONTRACT</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">call</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASSERT_VIOLATES_CONTRACT" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Assert that the statement produces a contract violation. If the statement does not produce a contract violation contract, the test is immediately terminated. </p>
-<p>Use ASSERT_VIOLATES_CONTRACT when the condition must hold - if it doesn’t the test stops right there. Use this when the remainder of the test doesn’t have semantic meaning without this condition holding.</p>
+<p>Use ASSERT_VIOLATES_CONTRACT when the condition must hold - if it does not, the test stops right there. Use this when the remainder of the test does not have semantic meaning without this condition holding.</p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="#gtest_8h_1a9eaacad31c8e47c7c77ad5996ed88ce6"><span class="std std-ref">EXPECT_VIOLATES_CONTRACT</span></a> </p>
