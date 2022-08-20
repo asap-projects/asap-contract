@@ -11,8 +11,8 @@ namespace asap::contract::testing {
 /*
  * The test functions are placed in their own translation unit so that the
  * compiler cannot optimize away the contract checks. Furthermore, the compiler
- * cannot remove code that would be unreachable because off CCS's that are
- * violated.
+ * cannot remove code that would be unreachable because of contract checks that
+ * are violated.
  */
 
 auto TestExpectDefault(const int *ptr) -> int;

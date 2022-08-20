@@ -79,7 +79,7 @@ public:
   ViolationHandler_impl(const ViolationHandler_impl &) = delete;
 
   /// Assignment operator (deleted).
-  auto operator=(const ViolationHandler_impl)
+  auto operator=(const ViolationHandler_impl &)
       -> ViolationHandler_impl & = delete;
 
   /// Move constructor (deleted).

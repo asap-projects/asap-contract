@@ -4,9 +4,9 @@
 // SPDX-License-Identifier: BSD-3-Clause
 //===----------------------------------------------------------------------===//
 
-#include <contract/contract.h>
-
 #include "test_helper.h"
+
+#include <contract/contract.h>
 
 namespace asap::contract::testing {
 

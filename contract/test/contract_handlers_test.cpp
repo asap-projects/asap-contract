@@ -6,31 +6,12 @@
 
 #include "contract/contract.h"
 
-#include <common/compilers.h>
+#include <sstream>
 
-#include <gmock/gmock-matchers.h>
 #include <gmock/gmock.h>
-#include <gtest/gtest-death-test.h>
 #include <gtest/gtest.h>
 
-#include <cstdlib>
-#include <sstream>
-#include <streambuf>
-
-// Disable compiler and linter warnings originating from the unit test framework
-// and for which we cannot do anything. Additionally every TEST or TEST_X macro
-// usage must be preceded by a '// NOLINTNEXTLINE'.
-ASAP_DIAGNOSTIC_PUSH
-#if defined(__clang__) && ASAP_HAS_WARNING("-Wused-but-marked-unused")
-#pragma clang diagnostic ignored "-Wused-but-marked-unused"
-#pragma clang diagnostic ignored "-Wglobal-constructors"
-#pragma clang diagnostic ignored "-Wunused-member-function"
-#endif
-// NOLINTBEGIN(used-but-marked-unused)
-
-using ::testing::IsFalse;
 using ::testing::IsNull;
-using ::testing::IsTrue;
 using ::testing::NotNull;
 
 namespace asap::contract {
@@ -59,7 +40,7 @@ TEST(DefaultHandler, IsDefined) {
 TEST(DefaultHandlerDeathTest, AbortOnViolation) {
   auto &default_handler = GetViolationHandler();
 
-  const struct asap::contract::Violation violation = {
+  constexpr struct asap::contract::Violation violation = {
       __FILE__, __LINE__, "my_function", "precondition", "1 == 2"};
 
   // We don't want to be too stringent on what is printed when a contract
@@ -77,7 +58,7 @@ TEST(CustomHandler, HandleViolationCallsRegisteredHandler) {
   auto *handler_function = function_mock.target<FunctionType>();
   ASSERT_THAT(handler_function, NotNull());
 
-  const asap::contract::Violation violation = {
+  constexpr asap::contract::Violation violation = {
       __FILE__, __LINE__, "my_function", "precondition", "1 == 2"};
 
   EXPECT_CALL(violation_handler_mock, Call(&violation)).Times(1);
@@ -90,6 +71,3 @@ TEST(CustomHandler, HandleViolationCallsRegisteredHandler) {
 
 } // namespace
 } // namespace asap::contract
-
-// NOLINTEND(used-but-marked-unused)
-ASAP_DIAGNOSTIC_POP

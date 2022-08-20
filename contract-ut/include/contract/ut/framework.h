@@ -12,11 +12,9 @@
 
 #pragma once
 
-#include <contract-ut/asap_contract-ut_api.h>
-
 #include <csetjmp>
-#include <cstdlib>
-#include <cstring>
+
+#include <contract-ut/asap_contract-ut_export.h>
 
 namespace asap::contract {
 

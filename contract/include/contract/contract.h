@@ -24,10 +24,9 @@
 
 #pragma once
 
-#include <contract/asap_contract_api.h>
-
-#include <cstdlib>
 #include <functional>
+
+#include <contract/asap_contract_export.h>
 
 // -----------------------------------------------------------------------------
 // Types used to implement the contract checking macros/apis
@@ -44,7 +43,7 @@ struct ASAP_CONTRACT_API Violation {
   size_t line;
   /// The function name inside which the contract violation occurred.
   const char *function;
-  /// The type of the violation (`precondition`, `postcondition` or
+  /// The type of the violation (`precondition`, `post-condition` or
   /// `assertion`).
   const char *type;
   /// The expression that specifies the predicate of the contract.
@@ -147,13 +146,13 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler &;
       INTERNAL_ASAP_CONTRACT_MODE_DEFAULT_, cond)
 
 /*!
- * Defines a postcondition.
+ * Defines a post-condition.
  *
- * A postcondition is a condition that a function should ensure for the return
+ * A post-condition is a condition that a function should ensure for the return
  * value and/or the state of objects upon exit from the function and is usually
  * placed immediately before returning control to the caller of the function.
  *
- * \note The postcondition is ignored if the contract checking build mode is
+ * \note The post-condition is ignored if the contract checking build mode is
  * `OFF`.
  *
  * \param cond an expression, that specifies the predicate of the contract.
@@ -196,13 +195,13 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler &;
       INTERNAL_ASAP_CONTRACT_MODE_AUDIT_, cond)
 
 /*!
- * \brief Defines a postcondition for the `AUDIT` contract checking mode.
+ * \brief Defines a post-condition for the `AUDIT` contract checking mode.
  *
- * A postcondition is a condition that a function should ensure for the return
+ * A post-condition is a condition that a function should ensure for the return
  * value and/or the state of objects upon exit from the function and is usually
  * placed immediately before returning control to the caller of the function.
  *
- * \note The postcondition is enforced only if the contract checking build mode
+ * \note The post-condition is enforced only if the contract checking build mode
  * is `AUDIT`.
  *
  * \param cond an expression, that specifies the predicate of the contract.
@@ -245,7 +244,7 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler &;
 
 /* Contract names */
 #define INTERNAL_ASAP_CONTRACT_TYPE_EXPECT_ "precondition"
-#define INTERNAL_ASAP_CONTRACT_TYPE_ENSURE_ "postcondition"
+#define INTERNAL_ASAP_CONTRACT_TYPE_ENSURE_ "post-condition"
 #define INTERNAL_ASAP_CONTRACT_TYPE_ASSERT_ "assertion"
 
 #if defined(__clang__)

@@ -10,7 +10,6 @@
  * \brief Implementation details for the contract checking API.
  */
 
-#include <cassert>
 #include <csetjmp>
 #include <iostream>
 

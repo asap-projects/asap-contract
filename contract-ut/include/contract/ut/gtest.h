@@ -22,8 +22,9 @@
 
 #pragma once
 
-#include "framework.h"
 #include <gtest/gtest.h>
+
+#include "framework.h"
 
 // NOLINTBEGIN(cppcoreguidelines-macro-usage)
 
@@ -51,9 +52,9 @@
  * statement does not produce a contract violation contract, the test is
  * immediately terminated.
  *
- * Use ASSERT_VIOLATES_CONTRACT when the condition must hold - if it doesn't the
- * test stops right there. Use this when the remainder of the test doesn't have
- * semantic meaning without this condition holding.
+ * Use ASSERT_VIOLATES_CONTRACT when the condition must hold - if it does not,
+ * the test stops right there. Use this when the remainder of the test does not
+ * have semantic meaning without this condition holding.
  *
  * \note The implementation of this macro is not thread safe.
  *
@@ -68,7 +69,7 @@
  * \brief Expect the statement to produce a contract violation. If the statement
  * does not produce a contract, execution still continues.
  *
- * Use EXPECT when the condition should hold, but in cases where it doesn't we
+ * Use EXPECT when the condition should hold, but in cases where it does not we
  * can still get value out of continuing the test. The test will still
  * ultimately fail at the end, though.
  *

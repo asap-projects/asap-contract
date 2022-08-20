@@ -4,9 +4,9 @@
 // SPDX-License-Identifier: BSD-3-Clause
 //===----------------------------------------------------------------------===//
 
-#include <contract/ut/framework.h>
-
 #include <gtest/gtest.h>
+
+#include <contract/ut/framework.h>
 
 auto main(int argc, char **argv) -> int {
   asap::contract::PrepareForTesting();
