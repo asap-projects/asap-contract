@@ -16,12 +16,8 @@ if(ASAP_WITH_GOOGLE_ASAN
   return()
 endif()
 
-function(_remove_contract_mode target)
-  get_target_property(defs ${target} COMPILE_DEFINITIONS)
-  list(REMOVE_ITEM defs ASAP_CONTRACT_DEFAULT ASAP_CONTRACT_AUDIT
-       ASAP_CONTRACT_OFF)
-  set_property(TARGET ${target} PROPERTY COMPILE_DEFINITIONS ${defs})
-endfunction()
+# Set this to ON to inhibit adding compiler definitions for contract modes
+set(ASAP_CONTRACT_TESTING ON)
 
 # ------------------------------------------------------------------------------
 # Unit Test Macros
@@ -48,9 +44,6 @@ asap_add_test(
   COMMENT
   "Contract unit test macros tests")
 
-# Remove any existing contract mode compiler definition and force the mode to
-# DEFAULT for this target.
-_remove_contract_mode(${target_name})
 target_compile_definitions(${target_name} PRIVATE ASAP_CONTRACT_DEFAULT)
 
 gtest_discover_tests(${target_name})
