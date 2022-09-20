@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.6.0](http://github.com/abdes/asap/compare/v4.5.2...v4.6.0) (2022-09-20)
+
+### Features
+
+* option to control the use of ccache, default is OFF ([49a17a9](http://github.com/abdes/asap/commit/49a17a99026ae7e59d14297d01ed2f8d10c78762))
+
+  More robust implementation of fatser builds with `ccache`. Caching is enabled in
+  GitHub CI builds and can be enabled in development environments by simply
+  setting the cmake variable `USE_CCACHE` to 'ON'/'TRUE' or equivalent.
+
+  A precondition for the environment is of course to have `ccache` installed,
+  which gets done automatically in GitHub workflows, but needs to be done in
+  development environments. It is recommended to use brew/choco for MacOS/Windows,
+  but to install from the pre-built binaries for Linux as the version that comes
+  with most distros is quite old.
+
+  It is to be noted that `ccache` with MSVC on Windows may have some issues and if
+  that is the case, simply do not use it.
+
+### [4.5.2](http://github.com/abdes/asap/compare/v4.5.1...v4.5.2) (2022-09-20)
+
+### Bug Fixes
+
+* sub-projects with tests fail due to coverage all target not being setup early enough ([400b2cc](http://github.com/abdes/asap/commit/400b2ccc120bd4f2c4d70f48fd3f94ce7a3f6de0))
+
+## [4.5.1](http://github.com/abdes/asap/compare/v4.5.0...v4.5.1) (2022-09-19)
+
+### Bug Fixes
+
+* contract mode definition should only be added when not testing asap_contract ([c6d5e34](http://github.com/abdes/asap/commit/c6d5e342e7a74236bb1b006be1e0d6bfe956a51a))
+* use correct path for the version include file ([7997b68](http://github.com/abdes/asap/commit/7997b68eeef236e6940b0ba168c79dbdd21b34ad))
+
 ## [4.5.0](http://github.com/abdes/asap/compare/v4.4.8...v4.5.0) (2022-09-19)
 
 ### Features
@@ -20,8 +52,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 2. **More visibility on project/module nesting**
 
-    Enhance configure logs with project/module nesting hierarchy
-    ([f6c13f2](http://github.com/abdes/asap/commit/f6c13f2a08c89cac57fb2f0dd857c8f382e50e7b))
+    Enhance configure logs with project/module nesting hierarchy ([f6c13f2](http://github.com/abdes/asap/commit/f6c13f2a08c89cac57fb2f0dd857c8f382e50e7b))
 
     Track the projects/modules nesting level with a hierarchy stack updated
     when we enter/exit a project/module. Most of the management is done
