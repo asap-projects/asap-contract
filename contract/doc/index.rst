@@ -1,12 +1,13 @@
-###########################
-ASAP common's documentation
-###########################
+#############################
+ASAP contract's documentation
+#############################
 
 .. toctree::
    :maxdepth: 2
    :hidden:
 
    API <api>
+   Build time configuration <build>
    License <license>
    Version <version>
 
@@ -52,3 +53,9 @@ Parts of the documentation
 ------------------------------
 *check this out to see the documentation of classes, macros, etc. offered by
 this module*
+
+:doc:`Build time configuration <build>`
+---------------------------------------
+*refer to this document to understand how you can set the bahvior of this
+library with regard to contract enforcement by using a specific compiler
+definition at build time*
