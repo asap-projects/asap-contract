@@ -16,9 +16,6 @@ if(ASAP_WITH_GOOGLE_ASAN
   return()
 endif()
 
-# Set this to ON to inhibit adding compiler definitions for contract modes
-set(ASAP_CONTRACT_TESTING ON)
-
 # ------------------------------------------------------------------------------
 # Default mode tests
 # ------------------------------------------------------------------------------
@@ -27,6 +24,8 @@ set(target_name ${MODULE_TARGET_NAME}_contract_default_test)
 
 asap_add_test(
   ${target_name}
+  CONTRACTS
+  DEFAULT
   UNIT_TEST
   VALGRIND_MEMCHECK
   SRCS
@@ -46,8 +45,6 @@ asap_add_test(
   COMMENT
   "Contract unit tests in DEFAULT build mode")
 
-target_compile_definitions(${target_name} PRIVATE ASAP_CONTRACT_DEFAULT)
-
 gtest_discover_tests(${target_name})
 
 # ------------------------------------------------------------------------------
@@ -59,6 +56,8 @@ set(target_name ${MODULE_TARGET_NAME}_contract_off_test)
 asap_add_test(
   ${target_name}
   UNIT_TEST
+  CONTRACTS
+  OFF
   VALGRIND_MEMCHECK
   SRCS
   # headers
@@ -76,8 +75,6 @@ asap_add_test(
   COMMENT
   "Contract unit tests in OFF build mode")
 
-target_compile_definitions(${target_name} PRIVATE ASAP_CONTRACT_OFF)
-
 gtest_discover_tests(${target_name})
 
 # ------------------------------------------------------------------------------
@@ -89,6 +86,8 @@ set(target_name ${MODULE_TARGET_NAME}_contract_audit_test)
 asap_add_test(
   ${target_name}
   UNIT_TEST
+  CONTRACTS
+  AUDIT
   VALGRIND_MEMCHECK
   SRCS
   # headers
@@ -105,7 +104,5 @@ asap_add_test(
   gmock
   COMMENT
   "Contract unit tests in AUDIT build mode")
-
-target_compile_definitions(${target_name} PRIVATE ASAP_CONTRACT_AUDIT)
 
 gtest_discover_tests(${target_name})

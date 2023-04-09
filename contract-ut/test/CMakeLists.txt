@@ -16,9 +16,6 @@ if(ASAP_WITH_GOOGLE_ASAN
   return()
 endif()
 
-# Set this to ON to inhibit adding compiler definitions for contract modes
-set(ASAP_CONTRACT_TESTING ON)
-
 # ------------------------------------------------------------------------------
 # Unit Test Macros
 # ------------------------------------------------------------------------------
@@ -28,6 +25,8 @@ set(target_name ${MODULE_TARGET_NAME}_contract_ut_test)
 asap_add_test(
   ${target_name}
   UNIT_TEST
+  CONTRACTS
+  DEFAULT
   VALGRIND_MEMCHECK
   SRCS
   # headers
@@ -43,7 +42,5 @@ asap_add_test(
   gmock
   COMMENT
   "Contract unit test macros tests")
-
-target_compile_definitions(${target_name} PRIVATE ASAP_CONTRACT_DEFAULT)
 
 gtest_discover_tests(${target_name})
