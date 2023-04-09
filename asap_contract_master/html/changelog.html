@@ -1,662 +1,486 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Changelog &#8212; Project: Contract</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'changelog';</script>
+    <link rel="icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Version" href="version.html" />
     <link rel="prev" title="License" href="license.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Project: Contract</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="tools/index.html">
-   Project Tools
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="simple">
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="license.html">
-   License
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Changelog
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="version.html">
-   Version
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tools/index.html">Project Tools</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version.html">Version</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/asap-projects/asap-contract" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/asap-projects/asap-contract/issues/new?title=Issue%20on%20page%20%2Fchangelog.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/changelog.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/asap-projects/asap-contract"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/asap-projects/asap-contract/issues/new?title=Issue%20on%20page%20%2Fchangelog.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/changelog.md.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   4.6.0 (2022-09-20)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#features">
-     Features
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     4.5.2 (2022-09-20)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bug-fixes">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   4.5.1 (2022-09-19)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   4.5.0 (2022-09-19)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     Features
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     Bug Fixes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#documentation">
-     Documentation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id8">
-   4.4.8 (2022-09-18)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id10">
-   4.4.7 (2022-09-18)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id11">
-   4.4.6 (2022-09-18)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id13">
-   4.4.5 (2022-09-18)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id14">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id15">
-   4.4.4 (2022-09-18)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id17">
-   4.4.3 (2022-09-18)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id19">
-   4.4.2 (2022-09-16)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id20">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id21">
-   1.0.2 (2022-08-20)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id22">
-     Features
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id23">
-     Bug Fixes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id24">
-     Documentation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id25">
-   1.0.1 (2022-03-15)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id26">
-   1.0.0 (2022-03-08)
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Changelog</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   4.6.0 (2022-09-20)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#features">
-     Features
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     4.5.2 (2022-09-20)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bug-fixes">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   4.5.1 (2022-09-19)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   4.5.0 (2022-09-19)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     Features
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     Bug Fixes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#documentation">
-     Documentation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id8">
-   4.4.8 (2022-09-18)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id10">
-   4.4.7 (2022-09-18)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id11">
-   4.4.6 (2022-09-18)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id13">
-   4.4.5 (2022-09-18)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id14">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id15">
-   4.4.4 (2022-09-18)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id17">
-   4.4.3 (2022-09-18)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id19">
-   4.4.2 (2022-09-16)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id20">
-     Bug Fixes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id21">
-   1.0.2 (2022-08-20)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id22">
-     Features
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id23">
-     Bug Fixes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id24">
-     Documentation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id25">
-   1.0.1 (2022-03-15)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id26">
-   1.0.0 (2022-03-08)
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Changelog</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.6.3 (2023-03-25)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enhancements">Enhancements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.6.2 (2022-11-28)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.6.1 (2022-09-20)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.6.0 (2022-09-20)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.5.2 (2022-09-20)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4.5.1 (2022-09-19)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4.5.0 (2022-09-19)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Bug Fixes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4.4.8 (2022-09-18)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4.4.7 (2022-09-18)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">4.4.6 (2022-09-18)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">4.4.5 (2022-09-18)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">4.4.4 (2022-09-18)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">4.4.3 (2022-09-18)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">4.4.2 (2022-09-16)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">1.0.2 (2022-08-20)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">Bug Fixes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">Documentation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">1.0.1 (2022-03-15)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">1.0.0 (2022-03-08)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="changelog">
-<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">#</a></h1>
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
 <p>All notable changes to this project will be documented in this file. See <a class="reference external" href="https://github.com/conventional-changelog/standard-version">standard-version</a> for commit guidelines.</p>
 <section id="id1">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.5.2...v4.6.0">4.6.0</a> (2022-09-20)<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.6.2...v4.6.3">4.6.3</a> (2023-03-25)<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="enhancements">
+<h3>Enhancements<a class="headerlink" href="#enhancements" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Simplify <code class="docutils literal notranslate"><span class="pre">devcontainer</span></code> setup by using features and additional container
+lifecycle commands.</p></li>
+</ul>
+</section>
+<section id="bug-fixes">
+<h3>Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>enable profiling for test coverage for MSVC (<a class="reference external" href="http://github.com/abdes/asap/commit/7348d0a36b05b2f2e9c517e5b981f2c218bd511e">7348d0a</a>), closes <a class="reference external" href="http://github.com/abdes/asap/issues/22">#22</a></p></li>
+</ul>
+</section>
+</section>
+<section id="id2">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.6.1...v4.6.2">4.6.2</a> (2022-11-28)<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="features">
-<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">#</a></h3>
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>increase ccache hit rate (<a class="reference external" href="http://github.com/abdes/asap/commit/a22a91226060851fe9fc7e5bc0e51973df94d95c">a22a912</a>)</p></li>
+<li><p>more robust handling of contract checking mode (<a class="reference external" href="http://github.com/abdes/asap/commit/304e9aee1e8fb265be78163578c45ae22569e52b">304e9ae</a>)</p>
+<p>When linking against the contract checking and enforcement library
+<code class="docutils literal notranslate"><span class="pre">asap-contract</span></code> (https://github.com/asap-projects/asap-contract), it is
+possible to control the contract checking mode by passing a value for the
+<code class="docutils literal notranslate"><span class="pre">CONTRACTS</span></code> option when adding any type of target with <code class="docutils literal notranslate"><span class="pre">asap_add_xxx</span></code>
+API (e.g. asap_add_library. asap_add_test, etc):</p>
+<ul class="simple">
+<li><p>CONTRACTS OFF     : set contract checking mode to OFF</p></li>
+<li><p>CONTRACTS AUDIT   : set contract checking mode to AUDIT</p></li>
+<li><p>CONTRACTS DEFAULT : set contract checking mode to DEFAULT</p></li>
+<li><p>CONTRACTS AUTO    : set contract checking mode using as a first priority the
+value passed in the cmake option <code class="docutils literal notranslate"><span class="pre">OPTION_CONTRACT_MODE</span></code>. If none is present,
+automatically set the mode based on the build configuration. For Debug -&gt;
+AUDIT, For Release and RelMinSize -&gt; OFF, and for RelWithDebInfo -&gt; DEFAULT.</p></li>
+<li><p>CONTRACTS TESTING : indicates that contracts are being testing and the
+target needs to have full control on the contract checking mode. Nothing
+will be done here.</p></li>
+</ul>
+<p>The default setting is AUTO.</p>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h3>Bug Fixes<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p><strong>build:</strong> <a class="reference external" href="http://github.com/abdes/asap/issues/21">#21</a> target option <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> not propagated properly (<a class="reference external" href="http://github.com/abdes/asap/commit/432cdaff1e5c8775d0d5c533dd0abe5eac229bd7">432cdaf</a>)</p>
+<p>By default, for every target we build, a compiler option will be added
+to treat warnings as errors, unless the target is added with <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> as
+an option.</p>
+<p>When that option is used, we now properly propagate it to set the
+corresponding compiler option to <strong>NOT</strong> treat warnings as errors.</p>
+<p>This is useful when 3rd party dependencies have include files that
+generate warnings.</p>
+</li>
+</ul>
+</section>
+</section>
+<section id="id4">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.6.0...v4.6.1">4.6.1</a> (2022-09-20)<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<section id="id5">
+<h3>Bug Fixes<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>always add code coverage ‘all’ targets (<a class="reference external" href="http://github.com/abdes/asap/commit/d7309a0806e11a46c73b700f12bccb424c62839b">d7309a0</a>)</p></li>
+<li><p>version-info test was added even when ASAP_BUILD_TESTS is OFF (<a class="reference external" href="http://github.com/abdes/asap/commit/b566e7b555ffb40f8ab1eea43d9a965c5724ccf1">b566e7b</a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="id6">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.5.2...v4.6.0">4.6.0</a> (2022-09-20)<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h3>Features<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>option to control the use of ccache, default is OFF (<a class="reference external" href="http://github.com/abdes/asap/commit/49a17a99026ae7e59d14297d01ed2f8d10c78762">49a17a9</a>)</p>
 <p>More robust implementation of fatser builds with <code class="docutils literal notranslate"><span class="pre">ccache</span></code>. Caching is enabled in
@@ -672,30 +496,30 @@ that is the case, simply do not use it.</p>
 </li>
 </ul>
 </section>
-<section id="id2">
-<h3><a class="reference external" href="http://github.com/abdes/asap/compare/v4.5.1...v4.5.2">4.5.2</a> (2022-09-20)<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<section id="id8">
+<h3><a class="reference external" href="http://github.com/abdes/asap/compare/v4.5.1...v4.5.2">4.5.2</a> (2022-09-20)<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 </section>
-<section id="bug-fixes">
-<h3>Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">#</a></h3>
+<section id="id9">
+<h3>Bug Fixes<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>sub-projects with tests fail due to coverage all target not being setup early enough (<a class="reference external" href="http://github.com/abdes/asap/commit/400b2ccc120bd4f2c4d70f48fd3f94ce7a3f6de0">400b2cc</a>)</p></li>
 </ul>
 </section>
 </section>
-<section id="id3">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.5.0...v4.5.1">4.5.1</a> (2022-09-19)<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
-<section id="id4">
-<h3>Bug Fixes<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<section id="id10">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.5.0...v4.5.1">4.5.1</a> (2022-09-19)<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<section id="id11">
+<h3>Bug Fixes<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>contract mode definition should only be added when not testing asap_contract (<a class="reference external" href="http://github.com/abdes/asap/commit/c6d5e342e7a74236bb1b006be1e0d6bfe956a51a">c6d5e34</a>)</p></li>
 <li><p>use correct path for the version include file (<a class="reference external" href="http://github.com/abdes/asap/commit/7997b68eeef236e6940b0ba168c79dbdd21b34ad">7997b68</a>)</p></li>
 </ul>
 </section>
 </section>
-<section id="id5">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.8...v4.5.0">4.5.0</a> (2022-09-19)<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
-<section id="id6">
-<h3>Features<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<section id="id12">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.8...v4.5.0">4.5.0</a> (2022-09-19)<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
+<section id="id13">
+<h3>Features<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <ol class="arabic">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">version-info</span></code> tool</strong></p>
 <p>Add the <code class="docutils literal notranslate"><span class="pre">version-info</span></code> tool to print the project info (<a class="reference external" href="http://github.com/abdes/asap/commit/cb228e8af73fbf063371e4c597f757bf5e9a4b75">cb228e8</a>)</p>
@@ -737,32 +561,32 @@ are also added (e.g. cmake-format, clang-format, check-clang-format,…)</p>
 </li>
 </ol>
 </section>
-<section id="id7">
-<h3>Bug Fixes<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<section id="id14">
+<h3>Bug Fixes<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>generated <code class="docutils literal notranslate"><span class="pre">version.h</span></code> should follow project naming (<a class="reference external" href="http://github.com/abdes/asap/commit/329bcdfc8cb9ba4782d0cbf4b3f21ad677307644">329bcdf</a>)</p></li>
 <li><p>install master project generated header files (<a class="reference external" href="http://github.com/abdes/asap/commit/3c5c1628b3c920e52200f7e14ecde2346b78a6f4">3c5c162</a>)</p></li>
 </ul>
 </section>
 <section id="documentation">
-<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">#</a></h3>
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>add example output from version-info tool (<a class="reference external" href="http://github.com/abdes/asap/commit/3a5515e74b0b0e5c06ba7e4500f7572a3bc4450f">3a5515e</a>)</p></li>
 <li><p>update after new formatting system (<a class="reference external" href="http://github.com/abdes/asap/commit/082e5134fd7d1cd03cc06218e10d5cf978b22409">082e513</a>)</p></li>
 </ul>
 </section>
 </section>
-<section id="id8">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.7...v4.4.8">4.4.8</a> (2022-09-18)<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
-<section id="id9">
-<h3>Bug Fixes<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<section id="id15">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.7...v4.4.8">4.4.8</a> (2022-09-18)<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
+<section id="id16">
+<h3>Bug Fixes<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>restore test setup deleted by mistake (<a class="reference external" href="http://github.com/abdes/asap/commit/cec7b9d92481d1480c54610892cbfd954b9e0068">cec7b9d</a>)</p></li>
 </ul>
 </section>
 </section>
-<section id="id10">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.6...v4.4.7">4.4.7</a> (2022-09-18)<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<section id="id17">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.6...v4.4.7">4.4.7</a> (2022-09-18)<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Refactor cmake common modules and the master cmake script to better work with
 sub-projects built with <code class="docutils literal notranslate"><span class="pre">asap</span></code>.</p></li>
@@ -770,10 +594,10 @@ sub-projects built with <code class="docutils literal notranslate"><span class="
 needed.</p></li>
 </ul>
 </section>
-<section id="id11">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.5...v4.4.6">4.4.6</a> (2022-09-18)<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
-<section id="id12">
-<h3>Bug Fixes<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<section id="id18">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.5...v4.4.6">4.4.6</a> (2022-09-18)<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
+<section id="id19">
+<h3>Bug Fixes<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>top level install not working properly (<a class="reference external" href="http://github.com/abdes/asap/commit/4ac4a31001a2ab73764e3d9fe3f279b1e7b25aee">4ac4a31</a>)</p>
 <p><code class="docutils literal notranslate"><span class="pre">CMAKE_MODULE_PATH</span></code> should be reset at the top level project to make sure that
@@ -784,10 +608,10 @@ a function in the top-level project <code class="docutils literal notranslate"><
 </ul>
 </section>
 </section>
-<section id="id13">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.4...v4.4.5">4.4.5</a> (2022-09-18)<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
-<section id="id14">
-<h3>Bug Fixes<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<section id="id20">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.4...v4.4.5">4.4.5</a> (2022-09-18)<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h2>
+<section id="id21">
+<h3>Bug Fixes<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="http://github.com/abdes/asap/issues/20">#20</a> local install should use CMAKE_INSTALL_PREFIX to set variables (<a class="reference external" href="http://github.com/abdes/asap/commit/2e1f1d49baff64dbf47dbbda234886ad2dfdbf1c">2e1f1d4</a>)</p></li>
 <li><p><a class="reference external" href="http://github.com/abdes/asap/issues/20">#20</a> use CMAKE_INSTALL_PREFIX to set variables (<a class="reference external" href="http://github.com/abdes/asap/commit/2fffd96392114993bbb72e3f614725f867d61ab1">2fffd96</a>)</p></li>
@@ -795,19 +619,19 @@ a function in the top-level project <code class="docutils literal notranslate"><
 </ul>
 </section>
 </section>
-<section id="id15">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.3...v4.4.4">4.4.4</a> (2022-09-18)<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
-<section id="id16">
-<h3>Bug Fixes<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<section id="id22">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.3...v4.4.4">4.4.4</a> (2022-09-18)<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h2>
+<section id="id23">
+<h3>Bug Fixes<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>wrong variable used for target name (<a class="reference external" href="http://github.com/abdes/asap/commit/04b5343ae541bd6d4f5ae1c1fa2eb85b93e0b5a3">04b5343</a>)</p></li>
 </ul>
 </section>
 </section>
-<section id="id17">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.2...v4.4.3">4.4.3</a> (2022-09-18)<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h2>
-<section id="id18">
-<h3>Bug Fixes<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
+<section id="id24">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.2...v4.4.3">4.4.3</a> (2022-09-18)<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h2>
+<section id="id25">
+<h3>Bug Fixes<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p><a class="reference external" href="http://github.com/abdes/asap/issues/19">#19</a> use generator expressions instead of CMAKE_BUILD_TYPE (<a class="reference external" href="http://github.com/abdes/asap/commit/857d2997d4ec6c879036e10234b8baf907e91089">857d299</a>)</p>
 <p>Code that checks CMAKE_BUILD_TYPE to set specific compiler flags or defines is
@@ -822,10 +646,10 @@ named <code class="docutils literal notranslate"><span class="pre">cmake-format.
 </ul>
 </section>
 </section>
-<section id="id19">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.1...v4.4.2">4.4.2</a> (2022-09-16)<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h2>
-<section id="id20">
-<h3>Bug Fixes<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
+<section id="id26">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v4.4.1...v4.4.2">4.4.2</a> (2022-09-16)<a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h2>
+<section id="id27">
+<h3>Bug Fixes<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="http://github.com/abdes/asap/issues/13">#13</a> move “caexcludepath” to dev-windows and exclude CPM cache (<a class="reference external" href="http://github.com/abdes/asap/commit/0571714e9436bfec26d6450b5bc37f2a5f478a55">0571714</a>)</p></li>
 <li><p><a class="reference external" href="http://github.com/abdes/asap/issues/14">#14</a> upgrade CPM to 0.35.6
@@ -837,10 +661,10 @@ named <code class="docutils literal notranslate"><span class="pre">cmake-format.
 </ul>
 </section>
 </section>
-<section id="id21">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v1.0.1...v1.0.2">1.0.2</a> (2022-08-20)<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h2>
-<section id="id22">
-<h3>Features<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h3>
+<section id="id28">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v1.0.1...v1.0.2">1.0.2</a> (2022-08-20)<a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h2>
+<section id="id29">
+<h3>Features<a class="headerlink" href="#id29" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>add ccache support to dev container
 (<a class="reference external" href="http://github.com/abdes/asap/commit/202c27a628f7f35ae17f2df91c1d95f67360abea">202c27a</a>)</p></li>
@@ -848,8 +672,8 @@ named <code class="docutils literal notranslate"><span class="pre">cmake-format.
 (<a class="reference external" href="http://github.com/abdes/asap/commit/412730f86679d7ccd350cadf5649b7a489376cae">412730f</a>)</p></li>
 </ul>
 </section>
-<section id="id23">
-<h3>Bug Fixes<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h3>
+<section id="id30">
+<h3>Bug Fixes<a class="headerlink" href="#id30" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="http://github.com/abdes/asap/issues/10">#10</a> no more template export header
 (<a class="reference external" href="http://github.com/abdes/asap/commit/dd8ffd5a8f36340963349c7ebcb7c1713c2f880a">dd8ffd5</a>)</p></li>
@@ -883,8 +707,8 @@ closes <a class="reference external" href="http://github.com/abdes/asap/issues/8
 (<a class="reference external" href="http://github.com/abdes/asap/commit/227de026878beb9dd9679d0cad12cf25bce16c4a">227de02</a>)</p></li>
 </ul>
 </section>
-<section id="id24">
-<h3>Documentation<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h3>
+<section id="id31">
+<h3>Documentation<a class="headerlink" href="#id31" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>add badge for OpenSSF best practices
 (<a class="reference external" href="http://github.com/abdes/asap/commit/26c01c8bcf98c6b47e6622dea91a6c6e10bc978c">26c01c8</a>)</p></li>
@@ -911,15 +735,15 @@ closes <a class="reference external" href="http://github.com/abdes/asap/issues/8
 </ul>
 </section>
 </section>
-<section id="id25">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v1.0.0...v1.0.1">1.0.1</a> (2022-03-15)<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h2>
+<section id="id32">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v1.0.0...v1.0.1">1.0.1</a> (2022-03-15)<a class="headerlink" href="#id32" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>refactor build to use CPM for cmake dependencies and speedup build with
 ccache.</p></li>
 </ul>
 </section>
-<section id="id26">
-<h2>1.0.0 (2022-03-08)<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h2>
+<section id="id33">
+<h2>1.0.0 (2022-03-08)<a class="headerlink" href="#id33" title="Permalink to this heading">#</a></h2>
 <p>This is the initial version of the contract checking library for C++ and its
 optional helper for unit testing contracts without death tests. For a full
 documentation of what is available refer to the <a class="reference external" href="https://asap-projects.github.io/asap-contract/">project
@@ -928,48 +752,163 @@ docs</a>.</p>
 </section>
 
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="license.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">License</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="license.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">License</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="version.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="version.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Version</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-      &copy; Copyright 2022, The Authors.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.6.3 (2023-03-25)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enhancements">Enhancements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.6.2 (2022-11-28)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.6.1 (2022-09-20)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.6.0 (2022-09-20)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.5.2 (2022-09-20)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4.5.1 (2022-09-19)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4.5.0 (2022-09-19)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Bug Fixes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4.4.8 (2022-09-18)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4.4.7 (2022-09-18)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">4.4.6 (2022-09-18)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">4.4.5 (2022-09-18)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">4.4.4 (2022-09-18)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">4.4.3 (2022-09-18)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">4.4.2 (2022-09-16)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">1.0.2 (2022-08-20)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">Bug Fixes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">Documentation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">1.0.1 (2022-03-15)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">1.0.0 (2022-03-08)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022, The Authors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
