@@ -54,7 +54,7 @@ extensions = [
 
 # Setup the breathe extension
 breathe_projects = {
-    "asap_cntract": "@DOXYGEN_BUILD_DIR@/asap_contract/xml",
+    "asap_contract": "@DOXYGEN_BUILD_DIR@/asap_contract/xml",
     "asap_contract-ut": "@DOXYGEN_BUILD_DIR@/asap_contract-ut/xml"
 }
 breathe_default_project = "asap_contract"
