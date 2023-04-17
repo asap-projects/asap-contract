@@ -403,47 +403,226 @@ not honored.</p></td>
 </table>
 <section id="default-mode-macros">
 <h3>Default mode macros<a class="headerlink" href="#default-mode-macros" title="Permalink to this heading">#</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygendefine: breathe_default_project value ‘asap_contract’ does not seem to be a valid key for the breathe_projects dictionary</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.ASAP_EXPECT">
+<span class="target" id="contract_8h_1ae112c82e7ddddeef5d123d120d7000df"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_EXPECT</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">cond</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_EXPECT" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Defines a precondition. </p>
+<p>A precondition describes the function’s expectation of its arguments and/or the state of other objects upon entry into the function and is usually placed at the start of a function body.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The prediction is ignored if the contract checking build mode is <code class="docutils literal notranslate"><span class="pre">OFF</span></code>.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygendefine: breathe_default_project value ‘asap_contract’ does not seem to be a valid key for the breathe_projects dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cond</strong> – an expression, that specifies the predicate of the contract. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.ASAP_ENSURE">
+<span class="target" id="contract_8h_1a6e73921b5ccdc9d3bfa95fdf44b7cbac"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_ENSURE</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">cond</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_ENSURE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Defines a post-condition.</p>
+<p>A post-condition is a condition that a function should ensure for the return value and/or the state of objects upon exit from the function and is usually placed immediately before returning control to the caller of the function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The post-condition is ignored if the contract checking build mode is <code class="docutils literal notranslate"><span class="pre">OFF</span></code>.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygendefine: breathe_default_project value ‘asap_contract’ does not seem to be a valid key for the breathe_projects dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cond</strong> – an expression, that specifies the predicate of the contract. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.ASAP_ASSERT">
+<span class="target" id="contract_8h_1a7120f0a111a4bcb1589a61bb2646a682"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_ASSERT</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">cond</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_ASSERT" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Defines an assertion. </p>
+<p>An assertion is a condition that should be satisfied where it appears in a function body and can be placed anywhere within the body of a function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The assertion is ignored if the contract checking build mode is <code class="docutils literal notranslate"><span class="pre">OFF</span></code>.</p>
 </div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cond</strong> – an expression, that specifies the predicate of the contract. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="audit-mode-macros">
 <h3>Audit mode macros<a class="headerlink" href="#audit-mode-macros" title="Permalink to this heading">#</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygendefine: breathe_default_project value ‘asap_contract’ does not seem to be a valid key for the breathe_projects dictionary</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.ASAP_EXPECT_AUDIT">
+<span class="target" id="contract_8h_1a84f975f88733c68b58942ac26364d870"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_EXPECT_AUDIT</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">cond</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_EXPECT_AUDIT" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Defines a precondition for the <code class="docutils literal notranslate"><span class="pre">AUDIT</span></code> contract checking mode. </p>
+<p>A precondition describes the function’s expectation of its arguments and/or the state of other objects upon entry into the function and is usually placed at the start of a function body.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The precondition is enforced only if the contract checking build mode is <code class="docutils literal notranslate"><span class="pre">AUDIT</span></code>.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygendefine: breathe_default_project value ‘asap_contract’ does not seem to be a valid key for the breathe_projects dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cond</strong> – an expression, that specifies the predicate of the contract. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.ASAP_ENSURE_AUDIT">
+<span class="target" id="contract_8h_1a221a5df110b80d57888a4a7f331d76c1"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_ENSURE_AUDIT</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">cond</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_ENSURE_AUDIT" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Defines a post-condition for the <code class="docutils literal notranslate"><span class="pre">AUDIT</span></code> contract checking mode. </p>
+<p>A post-condition is a condition that a function should ensure for the return value and/or the state of objects upon exit from the function and is usually placed immediately before returning control to the caller of the function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The post-condition is enforced only if the contract checking build mode is <code class="docutils literal notranslate"><span class="pre">AUDIT</span></code>.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygendefine: breathe_default_project value ‘asap_contract’ does not seem to be a valid key for the breathe_projects dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cond</strong> – an expression, that specifies the predicate of the contract. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.ASAP_ASSERT_AUDIT">
+<span class="target" id="contract_8h_1a5e5a20cd3effc38a0d9411c8ab65391d"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_ASSERT_AUDIT</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">cond</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_ASSERT_AUDIT" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Defines an assertion for the <code class="docutils literal notranslate"><span class="pre">AUDIT</span></code> contract checking mode. </p>
+<p>An assertion is a condition that should be satisfied where it appears in a function body and can be placed anywhere within the body of a function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The assertion is enforced only if the contract checking build mode is <code class="docutils literal notranslate"><span class="pre">AUDIT</span></code>.</p>
 </div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cond</strong> – an expression, that specifies the predicate of the contract. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 </section>
 <section id="violation-handler">
 <h2>Violation Handler<a class="headerlink" href="#violation-handler" title="Permalink to this heading">#</a></h2>
 <p>There is a single violation handler in the system. Its implementation, however,
 can be switched at runtime to install a custom handler.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenfunction: breathe_default_project value ‘asap_contract’ does not seem to be a valid key for the breathe_projects dictionary</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4asap8contract19GetViolationHandlerEv">
+<span id="_CPPv3N4asap8contract19GetViolationHandlerEv"></span><span id="_CPPv2N4asap8contract19GetViolationHandlerEv"></span><span id="asap::contract::GetViolationHandler"></span><span class="target" id="namespaceasap_1_1contract_1ad0a2e91248e8f1667d9e96c72f5778a2"></span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">asap</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">contract</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GetViolationHandler</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="o"><span class="pre">-&gt;</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4asap8contract16ViolationHandlerE" title="asap::contract::ViolationHandler"><span class="n"><span class="pre">ViolationHandler</span></span></a><span class="p"><span class="pre">&amp;</span></span><a class="headerlink" href="#_CPPv4N4asap8contract19GetViolationHandlerEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Obtain the single instance of the violation handler. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is very lightweight and can be called as often as required. It is preferred to exclusively call it every time the violation handler is needed instead of storing the returned reference.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenclass: breathe_default_project value ‘asap_contract’ does not seem to be a valid key for the breathe_projects dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a reference to the violation handler. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4asap8contract16ViolationHandlerE">
+<span id="_CPPv3N4asap8contract16ViolationHandlerE"></span><span id="_CPPv2N4asap8contract16ViolationHandlerE"></span><span id="asap::contract::ViolationHandler"></span><span class="target" id="classasap_1_1contract_1_1_violation_handler"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ViolationHandler</span></span></span><a class="headerlink" href="#_CPPv4N4asap8contract16ViolationHandlerE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Interface for a violation handler which can switch its implementation at runtime. </p>
+<p>We expect to have a single violation handler instance in the system, although its implementation can be changed at runtime. Therefore, the interface clearly deletes the copy constructors and assignment operators.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#namespaceasap_1_1contract_1ad0a2e91248e8f1667d9e96c72f5778a2"><span class="std std-ref">GetViolationHandler</span></a></p>
 </div>
+</p>
+<p>Subclassed by asap::contract::ViolationHandler_impl</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4asap8contract16ViolationHandler11WrapperTypeE">
+<span id="_CPPv3N4asap8contract16ViolationHandler11WrapperTypeE"></span><span id="_CPPv2N4asap8contract16ViolationHandler11WrapperTypeE"></span><span class="target" id="classasap_1_1contract_1_1_violation_handler_1ad0de3669bc5ac57485af40cde35c18d6"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WrapperType</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Violation</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N4asap8contract16ViolationHandler11WrapperTypeE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>A wrapper using std::function around violation handler implementation functions. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4asap8contract16ViolationHandler16ViolationHandlerEv">
+<span id="_CPPv3N4asap8contract16ViolationHandler16ViolationHandlerEv"></span><span id="_CPPv2N4asap8contract16ViolationHandler16ViolationHandlerEv"></span><span id="asap::contract::ViolationHandler::ViolationHandler"></span><span class="target" id="classasap_1_1contract_1_1_violation_handler_1a8835761bde2c39d8ff3d86efe07d0dc3"></span><span class="sig-name descname"><span class="n"><span class="pre">ViolationHandler</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N4asap8contract16ViolationHandler16ViolationHandlerEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Constructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4asap8contract16ViolationHandlerD0Ev">
+<span id="_CPPv3N4asap8contract16ViolationHandlerD0Ev"></span><span id="_CPPv2N4asap8contract16ViolationHandlerD0Ev"></span><span id="asap::contract::ViolationHandler::~ViolationHandler"></span><span class="target" id="classasap_1_1contract_1_1_violation_handler_1ad40577c3007264e9c1a1d9b3009db8ac"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~ViolationHandler</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4asap8contract16ViolationHandlerD0Ev" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Destructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4asap8contract16ViolationHandler16ViolationHandlerERK16ViolationHandler">
+<span id="_CPPv3N4asap8contract16ViolationHandler16ViolationHandlerERK16ViolationHandler"></span><span id="_CPPv2N4asap8contract16ViolationHandler16ViolationHandlerERK16ViolationHandler"></span><span id="asap::contract::ViolationHandler::ViolationHandler__ViolationHandlerCR"></span><span class="target" id="classasap_1_1contract_1_1_violation_handler_1af7afd86a101143790fc82ff850611f22"></span><span class="sig-name descname"><span class="n"><span class="pre">ViolationHandler</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4asap8contract16ViolationHandler16ViolationHandlerERK16ViolationHandler" title="asap::contract::ViolationHandler::ViolationHandler"><span class="n"><span class="pre">ViolationHandler</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N4asap8contract16ViolationHandler16ViolationHandlerERK16ViolationHandler" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Copy constructor (deleted). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4asap8contract16ViolationHandler16ViolationHandlerERR16ViolationHandler">
+<span id="_CPPv3N4asap8contract16ViolationHandler16ViolationHandlerERR16ViolationHandler"></span><span id="_CPPv2N4asap8contract16ViolationHandler16ViolationHandlerERR16ViolationHandler"></span><span id="asap::contract::ViolationHandler::ViolationHandler__ViolationHandlerRR"></span><span class="target" id="classasap_1_1contract_1_1_violation_handler_1ab715e9a3649a217d3def5d853eb2b90c"></span><span class="sig-name descname"><span class="n"><span class="pre">ViolationHandler</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4asap8contract16ViolationHandler16ViolationHandlerERR16ViolationHandler" title="asap::contract::ViolationHandler::ViolationHandler"><span class="n"><span class="pre">ViolationHandler</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N4asap8contract16ViolationHandler16ViolationHandlerERR16ViolationHandler" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Move constructor (default) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4asap8contract16ViolationHandleraSERK16ViolationHandler">
+<span id="_CPPv3N4asap8contract16ViolationHandleraSERK16ViolationHandler"></span><span id="_CPPv2N4asap8contract16ViolationHandleraSERK16ViolationHandler"></span><span id="asap::contract::ViolationHandler::assign-operator__ViolationHandlerCR"></span><span class="target" id="classasap_1_1contract_1_1_violation_handler_1ad79d4f1bd8b7ed76030089b581623b9d"></span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4asap8contract16ViolationHandlerE" title="asap::contract::ViolationHandler"><span class="n"><span class="pre">ViolationHandler</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="o"><span class="pre">-&gt;</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4asap8contract16ViolationHandlerE" title="asap::contract::ViolationHandler"><span class="n"><span class="pre">ViolationHandler</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N4asap8contract16ViolationHandleraSERK16ViolationHandler" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Copy assignment operator (deleted) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4asap8contract16ViolationHandleraSERR16ViolationHandler">
+<span id="_CPPv3N4asap8contract16ViolationHandleraSERR16ViolationHandler"></span><span id="_CPPv2N4asap8contract16ViolationHandleraSERR16ViolationHandler"></span><span id="asap::contract::ViolationHandler::assign-operator__ViolationHandlerRR"></span><span class="target" id="classasap_1_1contract_1_1_violation_handler_1ab1b38e3d17331bf59ec42ff1cc9f58cc"></span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4asap8contract16ViolationHandlerE" title="asap::contract::ViolationHandler"><span class="n"><span class="pre">ViolationHandler</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="o"><span class="pre">-&gt;</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4asap8contract16ViolationHandlerE" title="asap::contract::ViolationHandler"><span class="n"><span class="pre">ViolationHandler</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N4asap8contract16ViolationHandleraSERR16ViolationHandler" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Move assignment operator (default) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4asap8contract16ViolationHandler15HandleViolationEPK9Violation">
+<span id="_CPPv3N4asap8contract16ViolationHandler15HandleViolationEPK9Violation"></span><span id="_CPPv2N4asap8contract16ViolationHandler15HandleViolationEPK9Violation"></span><span id="asap::contract::ViolationHandler::HandleViolation__ViolationCP"></span><span class="target" id="classasap_1_1contract_1_1_violation_handler_1a20957316d5377caee65111c4e436802a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HandleViolation</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Violation</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">violation</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N4asap8contract16ViolationHandler15HandleViolationEPK9Violation" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Handle a contract violation. </p>
+<p>This method is called when a contract violation occurs. The information related to the violation is provided by the <code class="docutils literal notranslate"><span class="pre">violation</span></code> parameter.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function <em>may</em> never return.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>violation</strong> – violation details. Will never be null and is allocated on the stack. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4asap8contract16ViolationHandler11SwapHandlerER11WrapperType">
+<span id="_CPPv3N4asap8contract16ViolationHandler11SwapHandlerER11WrapperType"></span><span id="_CPPv2N4asap8contract16ViolationHandler11SwapHandlerER11WrapperType"></span><span id="asap::contract::ViolationHandler::SwapHandler__WrapperTypeR"></span><span class="target" id="classasap_1_1contract_1_1_violation_handler_1a779ccb06a32fadfbe79930bb81c081d4"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SwapHandler</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4asap8contract16ViolationHandler11WrapperTypeE" title="asap::contract::ViolationHandler::WrapperType"><span class="n"><span class="pre">WrapperType</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other_handler</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N4asap8contract16ViolationHandler11SwapHandlerER11WrapperType" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Swap the existing violation handler implementation with the give one. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other_handler</strong> – at the call time this holds the new violation handler implementation function. Upon return, it will hold the old violation handler function. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </section>
 </section>
 
