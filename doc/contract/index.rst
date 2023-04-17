@@ -1,6 +1,14 @@
-#############################
-ASAP contract's documentation
-#############################
+.. Structure conventions
+     # with overline, for parts
+     * with overline, for chapters
+     = for sections
+     - for subsections
+     ^ for sub-subsections
+     " for paragraphs
+
+################
+Module: contract
+################
 
 .. toctree::
    :maxdepth: 2
@@ -8,11 +16,6 @@ ASAP contract's documentation
 
    API <api>
    Build time configuration <build>
-   License <license>
-   Version <version>
-
-Welcome! This is the documentation for the *contract* module, part of the *asap*
-project.
 
 Contracts are usually expressed in the form of preconditions, post-conditions
 and assertions. Some programming languages have built-in support for contracts.
