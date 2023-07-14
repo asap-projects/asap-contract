@@ -333,7 +333,7 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler&;
      message,                                                                  \
      return_value)                                                             \
    std::ostringstream debug;                                                   \
-   debug << (message);                                                         \
+   debug << message;                                                           \
    const auto& message_str = debug.str();                                      \
    const struct asap::contract::Violation violation = {                        \
        __FILE__,                                                               \
