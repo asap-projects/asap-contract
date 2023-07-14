@@ -8,7 +8,8 @@
 
 #include <contract/ut/framework.h>
 
-auto main(int argc, char **argv) -> int {
+auto main(int argc, char** argv) -> int
+{
   asap::contract::PrepareForTesting();
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();

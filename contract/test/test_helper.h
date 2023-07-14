@@ -15,12 +15,12 @@ namespace asap::contract::testing {
  * are violated.
  */
 
-auto TestExpectDefault(const int *ptr) -> int;
-auto TestEnsureDefault(const int *ptr) -> int;
-auto TestAssertDefault(const int *ptr) -> int;
+auto TestExpectDefault(const int* ptr) -> int;
+auto TestEnsureDefault(const int* ptr) -> int;
+auto TestAssertDefault(const int* ptr) -> int;
 
-auto TestExpectAudit(const int *ptr) -> int;
-auto TestEnsureAudit(const int *ptr) -> int;
-auto TestAssertAudit(const int *ptr) -> int;
+auto TestExpectAudit(const int* ptr) -> int;
+auto TestEnsureAudit(const int* ptr) -> int;
+auto TestAssertAudit(const int* ptr) -> int;
 
-} // namespace asap::contract::testing
+}  // namespace asap::contract::testing

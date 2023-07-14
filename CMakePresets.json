@@ -297,7 +297,11 @@
       "name": "dev-base",
       "hidden": true,
       "jobs": 4,
-      "verbose": false
+      "verbose": false,
+      "targets": [
+        "all",
+        "build-all-tests"
+      ]
     },
     {
       "name": "dev-windows",

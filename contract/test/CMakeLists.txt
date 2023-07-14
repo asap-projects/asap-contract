@@ -10,10 +10,8 @@
 
 # If running with google sanitizers, skill all these targets as they are abort
 # and segmentation fault tests that do not make sense to run under sanitizers
-if(ASAP_WITH_GOOGLE_ASAN
-   OR ASAP_WITH_GOOGLE_UBSAN
-   OR ASAP_WITH_GOOGLE_TSAN)
-  return()
+if(ASAP_WITH_GOOGLE_ASAN OR ASAP_WITH_GOOGLE_UBSAN OR ASAP_WITH_GOOGLE_TSAN)
+    return()
 endif()
 
 # ------------------------------------------------------------------------------
@@ -43,7 +41,8 @@ asap_add_test(
   gtest
   gmock
   COMMENT
-  "Contract unit tests in DEFAULT build mode")
+  "Contract unit tests in DEFAULT build mode"
+)
 
 gtest_discover_tests(${target_name})
 
@@ -73,7 +72,8 @@ asap_add_test(
   gtest
   gmock
   COMMENT
-  "Contract unit tests in OFF build mode")
+  "Contract unit tests in OFF build mode"
+)
 
 gtest_discover_tests(${target_name})
 
@@ -103,6 +103,7 @@ asap_add_test(
   gtest
   gmock
   COMMENT
-  "Contract unit tests in AUDIT build mode")
+  "Contract unit tests in AUDIT build mode"
+)
 
 gtest_discover_tests(${target_name})

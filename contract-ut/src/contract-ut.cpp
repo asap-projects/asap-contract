@@ -30,37 +30,36 @@ int contract_check_active = 0;
 // NOLINTNEXTLINE(cppcoreguidelines-avoid-non-const-global-variables)
 Verbosity verbosity_level = Verbosity::QUIET;
 
-} // namespace
+}  // namespace
 
 namespace details {
 
 // NOLINTNEXTLINE(cppcoreguidelines-avoid-non-const-global-variables)
 jmp_buf jmp_env;
 
-void ContractCheckPush() {
-  contract_check_active++;
-}
+void ContractCheckPush() { contract_check_active++; }
 
-void ContractCheckPop() {
-  contract_check_active--;
-}
+void ContractCheckPop() { contract_check_active--; }
 
-} // namespace details
+}  // namespace details
 
 namespace {
 
-void PrintViolation(const Violation *violation) {
+void PrintViolation(const Violation* violation)
+{
   std::cerr << violation->file << ":" << violation->line << ": in "
             << violation->function << ": " << violation->type << " '"
             << violation->condition << "' violated" << std::endl;
 }
 
-[[noreturn]] void DefaultViolationHandler(const Violation *violation) {
+[[noreturn]] void DefaultViolationHandler(const Violation* violation)
+{
   PrintViolation(violation);
   abort();
 }
 
-[[noreturn]] void TestViolationHandler(const Violation *violation) {
+[[noreturn]] void TestViolationHandler(const Violation* violation)
+{
   if (contract_check_active == 0) {
     std::cerr << "Unexpected contract violation:" << std::endl;
     DefaultViolationHandler(violation);
@@ -76,15 +75,14 @@ void PrintViolation(const Violation *violation) {
   longjmp(details::jmp_env, 1);
 }
 
-} // namespace
+}  // namespace
 
-void SetVerbosity(Verbosity verbosity) {
-  verbosity_level = verbosity;
-}
+void SetVerbosity(Verbosity verbosity) { verbosity_level = verbosity; }
 
-void PrepareForTesting() {
+void PrepareForTesting()
+{
   auto test_handler = ViolationHandler::WrapperType{TestViolationHandler};
   GetViolationHandler().SwapHandler(test_handler);
 }
 
-} // namespace asap::contract
+}  // namespace asap::contract

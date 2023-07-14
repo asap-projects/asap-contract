@@ -10,10 +10,8 @@
 
 # If running with google sanitizers, skill all these targets as they are abort
 # and segmentation fault tests that do not make sense to run under sanitizers
-if(ASAP_WITH_GOOGLE_ASAN
-   OR ASAP_WITH_GOOGLE_UBSAN
-   OR ASAP_WITH_GOOGLE_TSAN)
-  return()
+if(ASAP_WITH_GOOGLE_ASAN OR ASAP_WITH_GOOGLE_UBSAN OR ASAP_WITH_GOOGLE_TSAN)
+    return()
 endif()
 
 # ------------------------------------------------------------------------------
@@ -41,6 +39,7 @@ asap_add_test(
   gtest
   gmock
   COMMENT
-  "Contract unit test macros tests")
+  "Contract unit test macros tests"
+)
 
 gtest_discover_tests(${target_name})

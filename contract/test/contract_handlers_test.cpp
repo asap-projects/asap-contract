@@ -14,20 +14,22 @@
 using ::testing::IsNull;
 using ::testing::NotNull;
 
-namespace asap::contract {
-namespace {
+using asap::contract::GetViolationHandler;
+using asap::contract::Violation;
+using asap::contract::ViolationHandler;
 
 /// The signature of functions which can be used as violation handler
 /// implementation.
-using FunctionType = void (*)(const Violation *);
+using FunctionType = void (*)(const Violation*);
 
 // NOLINTNEXTLINE
-TEST(DefaultHandler, IsDefined) {
+TEST(DefaultHandler, IsDefined)
+{
   ViolationHandler::WrapperType dummy_handler;
-  auto &default_handler = GetViolationHandler();
+  auto& default_handler = GetViolationHandler();
 
   default_handler.SwapHandler(dummy_handler);
-  auto *handler_function = dummy_handler.target<FunctionType>();
+  auto* handler_function = dummy_handler.target<FunctionType>();
   ASSERT_THAT(handler_function, NotNull());
 
   // Restore the handler
@@ -37,11 +39,12 @@ TEST(DefaultHandler, IsDefined) {
 }
 
 // NOLINTNEXTLINE
-TEST(DefaultHandlerDeathTest, AbortOnViolation) {
-  auto &default_handler = GetViolationHandler();
+TEST(DefaultHandlerDeathTest, AbortOnViolation)
+{
+  auto& default_handler = GetViolationHandler();
 
-  constexpr struct asap::contract::Violation violation = {
-      __FILE__, __LINE__, "my_function", "precondition", "1 == 2"};
+  constexpr struct asap::contract::Violation violation =
+      {__FILE__, __LINE__, "my_function", "precondition", "1 == 2", nullptr};
 
   // We don't want to be too stringent on what is printed when a contract
   // violation is being handled. We just require that the output contains the
@@ -50,16 +53,17 @@ TEST(DefaultHandlerDeathTest, AbortOnViolation) {
 }
 
 // NOLINTNEXTLINE
-TEST(CustomHandler, HandleViolationCallsRegisteredHandler) {
-  ::testing::MockFunction<void(const Violation *)> violation_handler_mock{};
+TEST(CustomHandler, HandleViolationCallsRegisteredHandler)
+{
+  ::testing::MockFunction<void(const Violation*)> violation_handler_mock{};
   auto function_mock = violation_handler_mock.AsStdFunction();
-  auto &default_handler = GetViolationHandler();
+  auto& default_handler = GetViolationHandler();
   default_handler.SwapHandler(function_mock);
-  auto *handler_function = function_mock.target<FunctionType>();
+  auto* handler_function = function_mock.target<FunctionType>();
   ASSERT_THAT(handler_function, NotNull());
 
-  constexpr asap::contract::Violation violation = {
-      __FILE__, __LINE__, "my_function", "precondition", "1 == 2"};
+  constexpr asap::contract::Violation violation =
+      {__FILE__, __LINE__, "my_function", "precondition", "1 == 2", nullptr};
 
   EXPECT_CALL(violation_handler_mock, Call(&violation)).Times(1);
   default_handler.HandleViolation(&violation);
@@ -68,6 +72,3 @@ TEST(CustomHandler, HandleViolationCallsRegisteredHandler) {
   handler_function = function_mock.target<FunctionType>();
   ASSERT_THAT(handler_function, IsNull());
 }
-
-} // namespace
-} // namespace asap::contract

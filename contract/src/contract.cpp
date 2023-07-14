@@ -25,30 +25,36 @@ namespace asap::contract {
 
 namespace {
 
-void PrintViolation(const Violation *violation) {
+void PrintViolation(const Violation* violation)
+{
   std::cerr << violation->file << ":" << violation->line << ": in "
             << violation->function << ": " << violation->type << " '"
             << violation->condition << "' violated" << std::endl;
 }
 
-[[noreturn]] void DefaultViolationHandler(const Violation *violation) {
+[[noreturn]] void DefaultViolationHandler(const Violation* violation)
+{
   PrintViolation(violation);
+  if (violation->message != nullptr)
+    std::cerr << violation->message << std::endl;
   abort();
 }
 
-} // namespace
+}  // namespace
 
 ViolationHandler::~ViolationHandler() = default;
 
 // Internal implementation of the singleton violation handler.
-class ViolationHandler_impl : public ViolationHandler {
-public:
+class ViolationHandler_impl : public ViolationHandler
+{
+ public:
   /*!
    * Get the single instance of the singleton.
    *
    * \return the single instance of the singleton.
    */
-  static auto instance() -> ViolationHandler_impl & {
+  static auto instance() -> ViolationHandler_impl&
+  {
     // We do expect a clang compiler warning here about the exit time destructor
     // required for this statement. The risk present here is that some other
     // global variable destructor would use contract validation macros after the
@@ -58,15 +64,15 @@ public:
     //
     // ==> It is acceptable to not use contract checks in global destructors.
 #if defined(__clang__)
-#if __has_warning("-Wexit-time-destructors")
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wexit-time-destructors"
-#endif
+# if __has_warning("-Wexit-time-destructors")
+#  pragma clang diagnostic push
+#  pragma clang diagnostic ignored "-Wexit-time-destructors"
+# endif
 #endif
     static const std::unique_ptr<ViolationHandler_impl> _instance{
         new ViolationHandler_impl()};
 #if defined(__clang__)
-#pragma clang diagnostic pop
+# pragma clang diagnostic pop
 #endif
 
     return *_instance;
@@ -76,39 +82,42 @@ public:
   ~ViolationHandler_impl() override = default;
 
   /// Copy constructor (deleted).
-  ViolationHandler_impl(const ViolationHandler_impl &) = delete;
+  ViolationHandler_impl(const ViolationHandler_impl&) = delete;
 
   /// Assignment operator (deleted).
-  auto operator=(const ViolationHandler_impl &)
-      -> ViolationHandler_impl & = delete;
+  auto operator=(const ViolationHandler_impl&)
+      -> ViolationHandler_impl& = delete;
 
   /// Move constructor (deleted).
-  ViolationHandler_impl(ViolationHandler_impl &&) = delete;
+  ViolationHandler_impl(ViolationHandler_impl&&) = delete;
 
   /// Move assignment operator (deleted).
-  auto operator=(ViolationHandler_impl &&) -> ViolationHandler_impl & = delete;
+  auto operator=(ViolationHandler_impl&&) -> ViolationHandler_impl& = delete;
 
-  void HandleViolation(const Violation *violation) override;
-  void SwapHandler(WrapperType &other_handler) override;
+  void HandleViolation(const Violation* violation) override;
+  void SwapHandler(WrapperType& other_handler) override;
 
-private:
+ private:
   /// Default constructor.
   ViolationHandler_impl() = default;
 
   WrapperType handler = WrapperType{DefaultViolationHandler};
 };
 
-void ViolationHandler_impl::HandleViolation(const Violation *violation) {
-  assert(violation != nullptr); // NOLINT
+void ViolationHandler_impl::HandleViolation(const Violation* violation)
+{
+  assert(violation != nullptr);  // NOLINT
   handler(violation);
 }
 
-void ViolationHandler_impl::SwapHandler(WrapperType &other_handler) {
+void ViolationHandler_impl::SwapHandler(WrapperType& other_handler)
+{
   other_handler.swap(handler);
 }
 
-auto GetViolationHandler() -> ViolationHandler & {
+auto GetViolationHandler() -> ViolationHandler&
+{
   return ViolationHandler_impl::instance();
 }
 
-} // namespace asap::contract
+}  // namespace asap::contract

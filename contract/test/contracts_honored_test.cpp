@@ -4,60 +4,67 @@
 // SPDX-License-Identifier: BSD-3-Clause
 //===----------------------------------------------------------------------===//
 
-#include <gtest/gtest.h>
-
 #include "test_helper.h"
 
-namespace asap::contract {
-namespace {
+#include <gtest/gtest.h>
+
+using asap::contract::testing::TestAssertAudit;
+using asap::contract::testing::TestAssertDefault;
+using asap::contract::testing::TestEnsureAudit;
+using asap::contract::testing::TestEnsureDefault;
+using asap::contract::testing::TestExpectAudit;
+using asap::contract::testing::TestExpectDefault;
 
 // NOLINTBEGIN(cppcoreguidelines-macro-usage)
 #if defined(ASAP_CONTRACT_DEFAULT)
-#define INTERNAL_ACT_TESTSUITE_NAME DefaultModeContrcatsHonored
+# define INTERNAL_ACT_TESTSUITE_NAME DefaultModeContrcatsHonored
 #elif defined(ASAP_CONTRACT_OFF)
-#define INTERNAL_ACT_TESTSUITE_NAME OffModeContrcatsHonored
+# define INTERNAL_ACT_TESTSUITE_NAME OffModeContrcatsHonored
 #elif defined(ASAP_CONTRACT_AUDIT)
-#define INTERNAL_ACT_TESTSUITE_NAME AuditModeContrcatsHonored
+# define INTERNAL_ACT_TESTSUITE_NAME AuditModeContrcatsHonored
 #else
-#define INTERNAL_ACT_TESTSUITE_NAME ContrcatsHonored
+# define INTERNAL_ACT_TESTSUITE_NAME ContrcatsHonored
 #endif
 // NOLINTEND(cppcoreguidelines-macro-usage)
 
 // NOLINTNEXTLINE
-TEST(INTERNAL_ACT_TESTSUITE_NAME, Expect) {
+TEST(INTERNAL_ACT_TESTSUITE_NAME, Expect)
+{
   static int value = 1;
-  testing::TestExpectDefault(&value);
+  TestExpectDefault(&value);
 }
 
 // NOLINTNEXTLINE
-TEST(INTERNAL_ACT_TESTSUITE_NAME, Ensure) {
+TEST(INTERNAL_ACT_TESTSUITE_NAME, Ensure)
+{
   static int value = 1;
-  testing::TestEnsureDefault(&value);
+  TestEnsureDefault(&value);
 }
 
 // NOLINTNEXTLINE
-TEST(INTERNAL_ACT_TESTSUITE_NAME, Assert) {
+TEST(INTERNAL_ACT_TESTSUITE_NAME, Assert)
+{
   static int value = 1;
-  testing::TestAssertDefault(&value);
+  TestAssertDefault(&value);
 }
 
 // NOLINTNEXTLINE
-TEST(INTERNAL_ACT_TESTSUITE_NAME, ExpectAudit) {
+TEST(INTERNAL_ACT_TESTSUITE_NAME, ExpectAudit)
+{
   static int value = 1;
-  testing::TestExpectAudit(&value);
+  TestExpectAudit(&value);
 }
 
 // NOLINTNEXTLINE
-TEST(INTERNAL_ACT_TESTSUITE_NAME, EnsureAudit) {
+TEST(INTERNAL_ACT_TESTSUITE_NAME, EnsureAudit)
+{
   static int value = 1;
-  testing::TestEnsureAudit(&value);
+  TestEnsureAudit(&value);
 }
 
 // NOLINTNEXTLINE
-TEST(INTERNAL_ACT_TESTSUITE_NAME, AssertAudit) {
+TEST(INTERNAL_ACT_TESTSUITE_NAME, AssertAudit)
+{
   static int value = 1;
-  testing::TestAssertAudit(&value);
+  TestAssertAudit(&value);
 }
-
-} // namespace
-} // namespace asap::contract
