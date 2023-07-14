@@ -113,13 +113,13 @@ TEST(AuditModeConstexprAssertions, AbortsInNonConstExprContext)
   constexpr int b{0};
 #if !defined(ASAP_WINDOWS)
   // NOLINTNEXTLINE
-  ASSERT_EXIT(divide(10, b), ::testing::KilledBySignal(SIGSEGV), ".*");
+  ASSERT_EXIT(divide(10, b), ::testing::KilledBySignal(SIGABRT), ".*");
 #else
   ASSERT_DEATH(divide(10, b), "");
 #endif
 }
 
-void unreachable(int value)
+void Unreachable(int value)
 {
   if (value == 5) {
     value += 2;
@@ -132,8 +132,8 @@ TEST(AuditModeUnreachableAssertions, AbortsIfUnreachable)
 {
 #if !defined(ASAP_WINDOWS)
   // NOLINTNEXTLINE
-  ASSERT_EXIT(unreachable(1), ::testing::KilledBySignal(SIGSEGV), ".*");
+  ASSERT_EXIT(Unreachable(1), ::testing::KilledBySignal(SIGABRT), ".*");
 #else
-  ASSERT_DEATH(unreachable(1), "");
+  ASSERT_DEATH(Unreachable(1), "");
 #endif
 }

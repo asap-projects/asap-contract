@@ -114,13 +114,14 @@ TEST(OffModeConstexprAssertions, Ignored)
   divide(10, b);
 }
 
-void unreachable(int value)
+void Unreachable(int value)
 {
   if (value == 5) {
     value += 2;
+  } else {
+    ASAP_ASSERT_UNREACHABLE()
   }
-  ASAP_ASSERT_UNREACHABLE("")
 }
 
 // NOLINTNEXTLINE
-TEST(OffModeUnreachableAssertions, Ignored) { unreachable(1); }
+TEST(OffModeUnreachableAssertions, DoesNotAbort) { Unreachable(1); }

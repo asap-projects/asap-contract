@@ -241,7 +241,7 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler&;
 #define ASAP_A_U_0_() ASAP_A_U_1_("")
 #define ASAP_A_U_BY_ARG_COUNT_(...)                                            \
   ASAP_COMPOSE_2_((__VA_ARGS__, ASAP_A_U_1_, ))
-#define ASAP_A_U_NO_ARG_EXPANDER_() , ASAP_A_U_0_()
+#define ASAP_A_U_NO_ARG_EXPANDER_() , ASAP_A_U_0_
 #define ASAP_A_U_SELECT_(...)                                                  \
   ASAP_A_U_BY_ARG_COUNT_(ASAP_A_U_NO_ARG_EXPANDER_ __VA_ARGS__())
 #define ASAP_ASSERT_UNREACHABLE(...) ASAP_A_U_SELECT_(__VA_ARGS__)(__VA_ARGS__)
