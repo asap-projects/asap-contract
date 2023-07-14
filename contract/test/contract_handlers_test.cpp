@@ -6,8 +6,6 @@
 
 #include "contract/contract.h"
 
-#include <sstream>
-
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 

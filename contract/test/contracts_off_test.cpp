@@ -118,6 +118,7 @@ void Unreachable(int value)
 {
   if (value == 5) {
     value += 2;
+    (void)value;
   } else {
     ASAP_ASSERT_UNREACHABLE()
   }

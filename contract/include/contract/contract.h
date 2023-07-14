@@ -333,7 +333,7 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler&;
      message,                                                                  \
      return_value)                                                             \
    std::ostringstream debug;                                                   \
-   debug << message;                                                           \
+   debug << message; /*NOLINT*/                                                \
    const auto& message_str = debug.str();                                      \
    const struct asap::contract::Violation violation = {                        \
        __FILE__,                                                               \
@@ -406,34 +406,34 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler&;
 #  if defined ASAP_CONTRACT_DEFAULT
 #   error At most one of ASAP_CONTRACT_OFF, ASAP_CONTRACT_DEFAULT, ASAP_CONTRACT_AUDIT must be specified
 #  endif
-#  define ASAP_CONTRACT_BUILD__ ASAP_CONTRACT_BUILD_MODE_OFF_
+#  define ASAP_CONTRACT_BUILD_ ASAP_CONTRACT_BUILD_MODE_OFF_
 # elif defined ASAP_CONTRACT_DEFAULT
 #  if defined ASAP_CONTRACT_AUDIT
 #   error At most one of ASAP_CONTRACT_OFF, ASAP_CONTRACT_DEFAULT, ASAP_CONTRACT_AUDIT must be specified
 #  endif
-#  define ASAP_CONTRACT_BUILD__ ASAP_CONTRACT_BUILD_MODE_DEFAULT_
+#  define ASAP_CONTRACT_BUILD_ ASAP_CONTRACT_BUILD_MODE_DEFAULT_
 # elif defined ASAP_CONTRACT_AUDIT
-#  define ASAP_CONTRACT_BUILD__ ASAP_CONTRACT_BUILD_MODE_AUDIT_
+#  define ASAP_CONTRACT_BUILD_ ASAP_CONTRACT_BUILD_MODE_AUDIT_
 # else /* Default build */
-#  define ASAP_CONTRACT_BUILD__ ASAP_CONTRACT_BUILD_MODE_DEFAULT_
+#  define ASAP_CONTRACT_BUILD_ ASAP_CONTRACT_BUILD_MODE_DEFAULT_
 # endif
 
-# define ASAP_CONTRACT_BUILD_MODE_OFF__ 0
+# define ASAP_CONTRACT_BUILD_MODE_OFF_ 0
 # define ASAP_CONTRACT_BUILD_MODE_DEFAULT_ 1
 # define ASAP_CONTRACT_BUILD_MODE_AUDIT_ 2
 
 /* Standard build configurations */
-# if ASAP_CONTRACT_BUILD__ == ASAP_CONTRACT_BUILD_MODE_OFF_
+# if ASAP_CONTRACT_BUILD_ == ASAP_CONTRACT_BUILD_MODE_OFF_
 #  define ASAP_CONTRACT_MODE_DEFAULT_ ASAP_CONTRACT_IGNORE_
 #  define ASAP_C_A_MODE_DEFAULT_ ASAP_C_A_IGNORE_
 #  define ASAP_A_U_MODE_DEFAULT_ ASAP_A_U_IGNORE_
 #  define ASAP_CONTRACT_MODE_AUDIT_ ASAP_CONTRACT_IGNORE_
-# elif ASAP_CONTRACT_BUILD__ == ASAP_CONTRACT_BUILD_MODE_DEFAULT_
+# elif ASAP_CONTRACT_BUILD_ == ASAP_CONTRACT_BUILD_MODE_DEFAULT_
 #  define ASAP_CONTRACT_MODE_DEFAULT_ ASAP_CONTRACT_CHECK_NEVER_CONTINUE_
 #  define ASAP_C_A_MODE_DEFAULT_ ASAP_C_A_CHECK_NEVER_CONTINUE_
 #  define ASAP_A_U_MODE_DEFAULT_ ASAP_A_U_CHECK_NEVER_CONTINUE_
 #  define ASAP_CONTRACT_MODE_AUDIT_ ASAP_CONTRACT_IGNORE_
-# elif ASAP_CONTRACT_BUILD__ == ASAP_CONTRACT_BUILD_MODE_AUDIT_
+# elif ASAP_CONTRACT_BUILD_ == ASAP_CONTRACT_BUILD_MODE_AUDIT_
 #  define ASAP_CONTRACT_MODE_DEFAULT_ ASAP_CONTRACT_CHECK_NEVER_CONTINUE_
 #  define ASAP_C_A_MODE_DEFAULT_ ASAP_C_A_CHECK_NEVER_CONTINUE_
 #  define ASAP_A_U_MODE_DEFAULT_ ASAP_A_U_CHECK_NEVER_CONTINUE_

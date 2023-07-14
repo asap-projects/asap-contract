@@ -42,7 +42,7 @@ void NestedViolator(const int* ptr)
   CHECK_VIOLATES_CONTRACT(TestAssertDefault(ptr));
   TestEnsureDefault(nullptr);
 }
-void Violator(int* ptr)
+void Violator(const int* ptr)
 {
   CHECK_VIOLATES_CONTRACT(TestAssertDefault(ptr));
   CHECK_VIOLATES_CONTRACT(NestedViolator(ptr));
