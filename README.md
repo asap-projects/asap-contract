@@ -39,6 +39,29 @@ the implementation of
 Additionally, optional helpers for unit testing contracts without the need for
 death tests are provided as a separate library.
 
+Examples of usage include:
+```c++
+// The simplest contract
+ASAP_EXPECT(x !=0);
+
+// Expect
+ASAP_EXPECT(x > 0, "should not be > 0 but I got " << x);
+
+// Assert
+ASAP_ASSERT(x > 0, "should not be > 0 but I got " << x);
+
+// Assert that some code branch is unreachable, e.g. after a fully covered
+// switch / case statement.
+ASAP_ASSERT_UNREACHABLE("should never reach here")
+
+// Assert with complex expression (note the true at the start to avoid starting
+// the expression with parenthesis), assertion failure message and a return
+// value in case of the assertion failure and the violation handler does not
+// abort; also to keep the compiler happy with the return statement.
+ASAP_ENSURE(true && ((0<x) || (x == -1)), "failed", Result::kFailed);
+
+```
+
 For a full documentation of what is available refer to the
 [project docs](https://asap-projects.github.io/asap-contract/).
 
@@ -48,8 +71,8 @@ We have detailed guides for setting up an efficient development environment, the
 development process, project structure, etc. Take a look at the available guides
 [here](https://abdes.github.io/asap/asap_master/html/).
 
-In addition to that, specific documentation for the command line parser, its
-usage and APIs, are provided in the project GitHub Pages site
+In addition to that, specific documentation for the contract checking module,
+its usage and APIs, are provided in the project GitHub Pages site
 [here](https://asap-projects.github.io/asap-contract/asap_contract_master/html/).
 
 ## Getting Started

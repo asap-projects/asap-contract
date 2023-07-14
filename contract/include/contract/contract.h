@@ -135,17 +135,6 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler&;
 
 // --- Default mode macros -----------------------------------------------------
 
-/*!
- * \brief Defines a precondition.
- *
- * A precondition describes the function's expectation of its arguments and/or
- * the state of other objects upon entry into the function and is usually placed
- * at the start of a function body.
- *
- * \note The prediction is ignored if the contract checking build mode is `OFF`.
- *
- * \param cond an expression, that specifies the predicate of the contract.
- */
 #define ASAP_EX_3_(condition, message, return_value)                           \
   ASAP_EX_CHECK_(ASAP_CONTRACT_MODE_DEFAULT_, condition, message, return_value)
 #define ASAP_EX_2_(condition, message) ASAP_EX_3_(condition, message, )
@@ -157,18 +146,40 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler&;
 #define ASAP_EX_SELECT_(...)                                                   \
   ASAP_EX_BY_ARG_COUNT_(ASAP_EX_NO_ARG_EXPANDER_ __VA_ARGS__())
 #define ASAP_EXPECT(...) ASAP_EX_SELECT_(__VA_ARGS__)(__VA_ARGS__)
-
 /*!
- * Defines a post-condition.
+ * \def ASAP_EXPECT
  *
- * A post-condition is a condition that a function should ensure for the return
- * value and/or the state of objects upon exit from the function and is usually
- * placed immediately before returning control to the caller of the function.
+ * \brief Defines a precondition.
  *
- * \note The post-condition is ignored if the contract checking build mode is
- * `OFF`.
+ * A precondition describes the function's expectation of its arguments and/or
+ * the state of other objects upon entry into the function and is usually placed
+ * at the start of a function body.
  *
- * \param cond an expression, that specifies the predicate of the contract.
+ * The macro can be invoked in multiple forms depending on whether a detailed
+ * failure message needs to be printed when the condition fails and whether the
+ * assertion is in a function that returns a value or not.
+ *
+ * The accompanying message is sent to an output stream before being printed to
+ * the standard error output. Therefore, it is possible to chain multiple
+ * message chunks using the `<<` operator.
+ *
+ * \code{.cpp}
+  ASAP_EXPECT(cond,
+      "failed, was expecting: " << expected << " but got: " << actual)
+ * \endcode
+ *
+ * The default handler aborts when an assertion fails, but it can be customized
+ * not to do so. The macro always has a return statement, and therefore, if it
+ * is located in a function that requires a return value, such value can be
+ * specified in the macro. This is not needed if the function does not return a
+ * value.
+ *
+ * \code{.cpp}
+ * ASAP_EXPECT(cond, "failed, and will return a default value",
+ * Result:kDefault);
+ * \endcode
+ *
+ * \note The prediction is ignored if the contract checking build mode is `OFF`.
  */
 #define ASAP_EN_3_(condition, message, return_value)                           \
   ASAP_EN_CHECK_(ASAP_CONTRACT_MODE_DEFAULT_, condition, message, return_value)
@@ -183,14 +194,39 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler&;
 #define ASAP_ENSURE(...) ASAP_EN_CHOOSE_(__VA_ARGS__)(__VA_ARGS__)
 
 /*!
- * \brief Defines an assertion.
+ * \def ASAP_ENSURE
+ * \brief Defines a post-condition.
  *
- * An assertion is a condition that should be satisfied where it appears in a
- * function body and can be placed anywhere within the body of a function.
+ * A post-condition is a condition that a function should ensure for the return
+ * value and/or the state of objects upon exit from the function and is usually
+ * placed immediately before returning control to the caller of the function.
  *
- * \note The assertion is ignored if the contract checking build mode is `OFF`.
+ * The macro can be invoked in multiple forms depending on whether a detailed
+ * failure message needs to be printed when the condition fails and whether the
+ * assertion is in a function that returns a value or not.
  *
- * \param cond an expression, that specifies the predicate of the contract.
+ * The accompanying message is sent to an output stream before being printed to
+ * the standard error output. Therefore, it is possible to chain multiple
+ * message chunks using the `<<` operator.
+ *
+ * \code{.cpp}
+ * ASAP_ENSURE(cond, "failed, was supposed to be: " << expected << " but is: "
+ * << actual)
+ * \endcode
+ *
+ * The default handler aborts when an assertion fails, but it can be customized
+ * not to do so. The macro always has a return statement, and therefore, if it
+ * is located in a function that requires a return value, such value can be
+ * specified in the macro. This is not needed if the function does not return a
+ * value.
+ *
+ * \code{.cpp}
+ * ASAP_ENSURE(cond, "failed, and will return a default value",
+ * Result:kDefault);
+ * \endcode
+ *
+ * \note The post-condition is ignored if the contract checking build mode is
+ * `OFF`.
  */
 #define ASAP_A_3_(condition, message, return_value)                            \
   ASAP_A_CHECK_(ASAP_CONTRACT_MODE_DEFAULT_, condition, message, return_value)
@@ -205,16 +241,39 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler&;
 #define ASAP_ASSERT(...) ASAP_A_CHOOSE_(__VA_ARGS__)(__VA_ARGS__)
 
 /*!
- * \brief Defines a constexpr assertion macro.
+ * \def ASAP_ASSERT
+ * \brief Defines an assertion.
  *
- * In a `constexpr` context, if the condition fails, the code fails to compile.
- * In a non-`constexpr` context, if the condition fails, message is printed to
- * error output and the application aborts.
+ * An assertion is a condition that should be satisfied where it appears in a
+ * function body and can be placed anywhere within the body of a function.
+ *
+ * The macro can be invoked in multiple forms depending on whether a detailed
+ * failure message needs to be printed when the condition fails and whether the
+ * assertion is in a function that returns a value or not.
+ *
+ * The accompanying message is sent to an output stream before being printed to
+ * the standard error output. Therefore, it is possible to chain multiple
+ * message chunks using the `<<` operator.
+ *
+ * \code{.cpp}
+ * ASAP_ASSERT(cond, "failed, was supposed to be: " << expected << " but is: "
+ * << actual)
+ * \endcode
+ *
+ * The default handler aborts when an assertion fails, but it can be customized
+ * not to do so. The macro always has a return statement, and therefore, if it
+ * is located in a function that requires a return value, such value can be
+ * specified in the macro. This is not needed if the function does not return a
+ * value.
+ *
+ * \code{.cpp}
+ * ASAP_ASSERT(cond, "failed, and will return a default value",
+ * Result:kDefault);
+ * \endcode
  *
  * \note The assertion is ignored if the contract checking build mode is `OFF`.
- *
- * \param cond an expression, that specifies the predicate of the contract.
  */
+
 #define ASAP_C_A_2_(condition, message)                                        \
   ASAP_C_A_CHECK_(ASAP_C_A_MODE_DEFAULT_, condition, message)
 #define ASAP_C_A_1_(condition) ASAP_C_A_2_(condition, )
@@ -225,16 +284,30 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler&;
 #define ASAP_C_A_CHOOSE_(...)                                                  \
   ASAP_C_A_BY_ARG_COUNT_(ASAP_C_A_NO_ARG_EXPANDER_ __VA_ARGS__())
 #define ASAP_CONSTEXPR_ASSERT(...) ASAP_C_A_CHOOSE_(__VA_ARGS__)(__VA_ARGS__)
-
 /*!
- * \brief Defines an assertion macro for unreachable code.
+ * \def ASAP_CONSTEXPR_ASSERT
+ * \brief Defines a constexpr assertion macro.
  *
- * If code marked with this macro is reached, `message` is printed to error
- * output and the application aborts.
+ * In a `constexpr` context, if the condition fails, the code fails to compile.
+ * In a non-`constexpr` context, if the condition fails, message is printed to
+ * error output and the application aborts.
+ *
+ * The macro can be invoked in multiple forms depending on whether a detailed
+ * failure message needs to be printed when the condition fails and whether the
+ * assertion is in a function that returns a value or not.
+ *
+ * The accompanying message is sent to an output stream before being printed to
+ * the standard error output. Therefore, it is possible to chain multiple
+ * message chunks using the `<<` operator.
+ *
+ * \code{.cpp}
+ * constexpr int divide(int a, int b)
+ * {
+ *   return ASAP_CONSTEXPR_ASSERT(b, "divide(): can't divide by zero"), a / b;
+ * }
+ * \endcode
  *
  * \note The assertion is ignored if the contract checking build mode is `OFF`.
- *
- * \param cond an expression, that specifies the predicate of the contract.
  */
 
 #define ASAP_A_U_1_(message) ASAP_A_U_CHECK_(ASAP_A_U_MODE_DEFAULT_, message)
@@ -245,6 +318,26 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler&;
 #define ASAP_A_U_SELECT_(...)                                                  \
   ASAP_A_U_BY_ARG_COUNT_(ASAP_A_U_NO_ARG_EXPANDER_ __VA_ARGS__())
 #define ASAP_ASSERT_UNREACHABLE(...) ASAP_A_U_SELECT_(__VA_ARGS__)(__VA_ARGS__)
+/*!
+ * \def ASAP_ASSERT_UNREACHABLE
+ * \brief Defines an assertion macro for unreachable code.
+ *
+ * If code marked with this macro is reached, `message` is printed to error
+ * output and the application aborts.
+ *
+ * \code{.cpp}
+ * void Unreachable(int value)
+ * {
+ *   if (value == 5) {
+ *     value += 2;
+ *     (void)value;
+ *   }
+ *   ASAP_ASSERT_UNREACHABLE("unreachable code")
+ * }
+ * \endcode
+ *
+ * \note The assertion is ignored if the contract checking build mode is `OFF`.
+ */
 
 // --- Audit mode macros -------------------------------------------------------
 
@@ -258,7 +351,10 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler&;
  * \note The precondition is enforced only if the contract checking build mode
  * is `AUDIT`.
  *
- * \param cond an expression, that specifies the predicate of the contract.
+ * \param condition an expression, that specifies the predicate of the contract.
+ * \param message an optional description message.
+ * \param return_value an optional return value if the macro is in function that
+ * requires one.
  */
 #define ASAP_EXPECT_AUDIT(condition, message, return_value)                    \
   ASAP_EX_CHECK_(ASAP_CONTRACT_MODE_AUDIT_, condition, message, return_value)
@@ -273,7 +369,10 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler&;
  * \note The post-condition is enforced only if the contract checking build mode
  * is `AUDIT`.
  *
- * \param cond an expression, that specifies the predicate of the contract.
+ * \param condition an expression, that specifies the predicate of the contract.
+ * \param message an optional description message.
+ * \param return_value an optional return value if the macro is in function that
+ * requires one.
  */
 #define ASAP_ENSURE_AUDIT(condition, message, return_value)                    \
   ASAP_EN_CHECK_(ASAP_CONTRACT_MODE_AUDIT_, condition, message, return_value)
@@ -287,7 +386,10 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler&;
  * \note The assertion is enforced only if the contract checking build mode is
  * `AUDIT`.
  *
- * \param cond an expression, that specifies the predicate of the contract.
+ * \param condition an expression, that specifies the predicate of the contract.
+ * \param message an optional description message.
+ * \param return_value an optional return value if the macro is in function that
+ * requires one.
  */
 #define ASAP_ASSERT_AUDIT(condition, message, return_value)                    \
   ASAP_A_CHECK_(ASAP_CONTRACT_MODE_AUDIT_, condition, message, return_value)
@@ -296,15 +398,15 @@ ASAP_CONTRACT_API auto GetViolationHandler() -> ViolationHandler&;
 // Internal macros
 // -----------------------------------------------------------------------------
 
-#define ASAP_SELECT_4_(_f1, _f2, _f3, _f4, ...) _f4
-#define ASAP_COMPOSE_4_(args) ASAP_SELECT_4_ args
-#define ASAP_SELECT_3_(_f1, _f2, _f3, ...) _f3
-#define ASAP_COMPOSE_3_(args) ASAP_SELECT_3_ args
-#define ASAP_SELECT_2_(_f1, _f2, ...) _f2
-#define ASAP_COMPOSE_2_(args) ASAP_SELECT_2_ args
-
-// Exclude internal macros from doxygen documentation
+// Exclude all internal macros from doxygen documentation
 #if !defined(DOXYGEN_DOCUMENTATION_BUILD)
+
+# define ASAP_SELECT_4_(_f1, _f2, _f3, _f4, ...) _f4
+# define ASAP_COMPOSE_4_(args) ASAP_SELECT_4_ args
+# define ASAP_SELECT_3_(_f1, _f2, _f3, ...) _f3
+# define ASAP_COMPOSE_3_(args) ASAP_SELECT_3_ args
+# define ASAP_SELECT_2_(_f1, _f2, ...) _f2
+# define ASAP_COMPOSE_2_(args) ASAP_SELECT_2_ args
 
 /* Helper macros */
 # define ASAP_EX_CHECK_(check, condition, message, return_value)               \

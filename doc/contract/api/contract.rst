@@ -48,6 +48,11 @@ Default mode macros
 
 .. doxygendefine:: ASAP_ASSERT
 
+.. doxygendefine:: ASAP_CONSTEXPR_ASSERT
+
+.. doxygendefine:: ASAP_ASSERT_UNREACHABLE
+
+
 Audit mode macros
 -------------------
 
