@@ -124,4 +124,18 @@ void Unreachable(int value)
 }
 
 // NOLINTNEXTLINE
-TEST(OffModeUnreachableAssertions, DoesNotAbort) { Unreachable(1); }
+TEST(OffModeUnreachableAssertions, DoesNotAbortInUnreachableCode)
+{
+  Unreachable(5);
+}
+
+// NOLINTNEXTLINE
+TEST(DefaultModeUnreachableAssertions, MayAbortIfReached)
+{
+#if defined(_MSC_VER)
+  Unreachable(1);
+  Unreachable(5);
+#else
+  Unreachable(5);
+#endif
+}

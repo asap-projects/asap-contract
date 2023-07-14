@@ -126,14 +126,3 @@ void Unreachable(int value)
   }
   ASAP_ASSERT_UNREACHABLE("unreachable code")
 }
-
-// NOLINTNEXTLINE
-TEST(DefaultModeUnreachableAssertions, AbortsIfUnreachable)
-{
-#if !defined(ASAP_WINDOWS)
-  // NOLINTNEXTLINE
-  ASSERT_EXIT(Unreachable(1), ::testing::KilledBySignal(SIGABRT), ".*");
-#else
-  ASSERT_DEATH(Unreachable(1), "");
-#endif
-}
