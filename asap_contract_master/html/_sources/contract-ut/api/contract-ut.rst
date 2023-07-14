@@ -19,10 +19,13 @@ Google Test (other frameworks can be easily added) that do not require the use
 of death tests.
 
 .. doxygendefine:: CHECK_VIOLATES_CONTRACT
+  :project: asap_contract-ut
 
 .. doxygendefine:: EXPECT_VIOLATES_CONTRACT
+  :project: asap_contract-ut
 
 .. doxygendefine:: ASSERT_VIOLATES_CONTRACT
+  :project: asap_contract-ut
 
 Example
 =======

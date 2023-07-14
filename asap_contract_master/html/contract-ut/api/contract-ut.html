@@ -369,18 +369,79 @@ test support by the testing framework.</p>
 <p>To simplify this situation, we provide special macros for unit testing with
 Google Test (other frameworks can be easily added) that do not require the use
 of death tests.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygendefine: Cannot find define “CHECK_VIOLATES_CONTRACT” in doxygen xml output for project “asap_contract” from directory: /home/runner/work/asap-contract/asap-contract/build/dox/asap_contract/xml</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.CHECK_VIOLATES_CONTRACT">
+<span class="target" id="gtest_8h_1a4b028ab80ac7ac3f355233bf57c2163c"></span><span class="sig-name descname"><span class="n"><span class="pre">CHECK_VIOLATES_CONTRACT</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">call</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.CHECK_VIOLATES_CONTRACT" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>An alias for <a class="reference internal" href="#gtest_8h_1a0ea9e3c4ff7dbb2faf929eb825968ded"><span class="std std-ref">ASSERT_VIOLATES_CONTRACT()</span></a>, checks that the statement produces a contract violation and if not, the test is immediately terminated. </p>
+<p>If the statement does not produce a violation contract, execution is aborted.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#gtest_8h_1a0ea9e3c4ff7dbb2faf929eb825968ded"><span class="std std-ref">ASSERT_VIOLATES_CONTRACT</span></a></p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygendefine: Cannot find define “EXPECT_VIOLATES_CONTRACT” in doxygen xml output for project “asap_contract” from directory: /home/runner/work/asap-contract/asap-contract/build/dox/asap_contract/xml</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#gtest_8h_1a9eaacad31c8e47c7c77ad5996ed88ce6"><span class="std std-ref">EXPECT_VIOLATES_CONTRACT</span></a></p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygendefine: Cannot find define “ASSERT_VIOLATES_CONTRACT” in doxygen xml output for project “asap_contract” from directory: /home/runner/work/asap-contract/asap-contract/build/dox/asap_contract/xml</p>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The implementation of this macro is not thread safe.</p>
 </div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>call</strong> – the statement to test.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.EXPECT_VIOLATES_CONTRACT">
+<span class="target" id="gtest_8h_1a9eaacad31c8e47c7c77ad5996ed88ce6"></span><span class="sig-name descname"><span class="n"><span class="pre">EXPECT_VIOLATES_CONTRACT</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">call</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.EXPECT_VIOLATES_CONTRACT" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Expect the statement to produce a contract violation. If the statement does not produce a contract, execution still continues. </p>
+<p>Use EXPECT when the condition should hold, but in cases where it does not we can still get value out of continuing the test. The test will still ultimately fail at the end, though.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#gtest_8h_1a0ea9e3c4ff7dbb2faf929eb825968ded"><span class="std std-ref">ASSERT_VIOLATES_CONTRACT</span></a></p>
+</div>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The implementation of this macro is not thread safe.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>call</strong> – the statement to test.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.ASSERT_VIOLATES_CONTRACT">
+<span class="target" id="gtest_8h_1a0ea9e3c4ff7dbb2faf929eb825968ded"></span><span class="sig-name descname"><span class="n"><span class="pre">ASSERT_VIOLATES_CONTRACT</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">call</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASSERT_VIOLATES_CONTRACT" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Assert that the statement produces a contract violation. If the statement does not produce a contract violation contract, the test is immediately terminated. </p>
+<p>Use ASSERT_VIOLATES_CONTRACT when the condition must hold - if it does not, the test stops right there. Use this when the remainder of the test does not have semantic meaning without this condition holding.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#gtest_8h_1a9eaacad31c8e47c7c77ad5996ed88ce6"><span class="std std-ref">EXPECT_VIOLATES_CONTRACT</span></a></p>
+</div>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The implementation of this macro is not thread safe.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>call</strong> – the statement to test.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Some function to be tested in some .cpp file</span>

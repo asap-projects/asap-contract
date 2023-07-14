@@ -406,17 +406,108 @@ not honored.</p></td>
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.ASAP_EXPECT">
 <span class="target" id="contract_8h_1a5df8ce3a793b042e4a99b23188d2b571"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_EXPECT</span></span></span><span class="sig-paren">(</span><span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_EXPECT" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Defines a precondition. </p>
+<p>A precondition describes the function’s expectation of its arguments and/or the state of other objects upon entry into the function and is usually placed at the start of a function body.</p>
+<p>The macro can be invoked in multiple forms depending on whether a detailed failure message needs to be printed when the condition fails and whether the assertion is in a function that returns a value or not.</p>
+<p>The accompanying message is sent to an output stream before being printed to the standard error output. Therefore, it is possible to chain multiple message chunks using the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> operator.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ASAP_EXPECT</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;failed, was expecting: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">expected</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; but got: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">actual</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The default handler aborts when an assertion fails, but it can be customized not to do so. The macro always has a return statement, and therefore, if it is located in a function that requires a return value, such value can be specified in the macro. This is not needed if the function does not return a value.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ASAP_EXPECT</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;failed, and will return a default value&quot;</span><span class="p">,</span>
+<span class="nl">Result</span><span class="p">:</span><span class="n">kDefault</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The prediction is ignored if the contract checking build mode is <code class="docutils literal notranslate"><span class="pre">OFF</span></code>. </p>
+</div>
+</dd></dl>
 
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.ASAP_ENSURE">
 <span class="target" id="contract_8h_1af924f4050110dbc4bd267bcd366dd40d"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_ENSURE</span></span></span><span class="sig-paren">(</span><span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_ENSURE" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Defines a post-condition. </p>
+<p>A post-condition is a condition that a function should ensure for the return value and/or the state of objects upon exit from the function and is usually placed immediately before returning control to the caller of the function.</p>
+<p>The macro can be invoked in multiple forms depending on whether a detailed failure message needs to be printed when the condition fails and whether the assertion is in a function that returns a value or not.</p>
+<p>The accompanying message is sent to an output stream before being printed to the standard error output. Therefore, it is possible to chain multiple message chunks using the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> operator.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ASAP_ENSURE</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;failed, was supposed to be: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">expected</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; but is: &quot;</span>
+<span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">actual</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The default handler aborts when an assertion fails, but it can be customized not to do so. The macro always has a return statement, and therefore, if it is located in a function that requires a return value, such value can be specified in the macro. This is not needed if the function does not return a value.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ASAP_ENSURE</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;failed, and will return a default value&quot;</span><span class="p">,</span>
+<span class="nl">Result</span><span class="p">:</span><span class="n">kDefault</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The post-condition is ignored if the contract checking build mode is <code class="docutils literal notranslate"><span class="pre">OFF</span></code>. </p>
+</div>
+</dd></dl>
 
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.ASAP_ASSERT">
 <span class="target" id="contract_8h_1a65c6188b5b39d7b559c43e90a90d188e"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_ASSERT</span></span></span><span class="sig-paren">(</span><span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_ASSERT" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Defines an assertion. </p>
+<p>An assertion is a condition that should be satisfied where it appears in a function body and can be placed anywhere within the body of a function.</p>
+<p>The macro can be invoked in multiple forms depending on whether a detailed failure message needs to be printed when the condition fails and whether the assertion is in a function that returns a value or not.</p>
+<p>The accompanying message is sent to an output stream before being printed to the standard error output. Therefore, it is possible to chain multiple message chunks using the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> operator.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ASAP_ASSERT</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;failed, was supposed to be: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">expected</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; but is: &quot;</span>
+<span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">actual</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The default handler aborts when an assertion fails, but it can be customized not to do so. The macro always has a return statement, and therefore, if it is located in a function that requires a return value, such value can be specified in the macro. This is not needed if the function does not return a value.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ASAP_ASSERT</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;failed, and will return a default value&quot;</span><span class="p">,</span>
+<span class="nl">Result</span><span class="p">:</span><span class="n">kDefault</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The assertion is ignored if the contract checking build mode is <code class="docutils literal notranslate"><span class="pre">OFF</span></code>. </p>
+</div>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.ASAP_CONSTEXPR_ASSERT">
+<span class="target" id="contract_8h_1add2a9e111faf1087aac134dc0cc9f8b1"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_CONSTEXPR_ASSERT</span></span></span><span class="sig-paren">(</span><span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_CONSTEXPR_ASSERT" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Defines a constexpr assertion macro. </p>
+<p>In a <code class="docutils literal notranslate"><span class="pre">constexpr</span></code> context, if the condition fails, the code fails to compile. In a non-<code class="docutils literal notranslate"><span class="pre">constexpr</span></code> context, if the condition fails, message is printed to error output and the application aborts.</p>
+<p>The macro can be invoked in multiple forms depending on whether a detailed failure message needs to be printed when the condition fails and whether the assertion is in a function that returns a value or not.</p>
+<p>The accompanying message is sent to an output stream before being printed to the standard error output. Therefore, it is possible to chain multiple message chunks using the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> operator.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ASAP_CONSTEXPR_ASSERT</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;divide(): can&#39;t divide by zero&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The assertion is ignored if the contract checking build mode is <code class="docutils literal notranslate"><span class="pre">OFF</span></code>. </p>
+</div>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.ASAP_ASSERT_UNREACHABLE">
+<span class="target" id="contract_8h_1ad102e7cb4a6897b696800cad8bbf1240"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_ASSERT_UNREACHABLE</span></span></span><span class="sig-paren">(</span><span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_ASSERT_UNREACHABLE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Defines an assertion macro for unreachable code. </p>
+<p>If code marked with this macro is reached, <code class="docutils literal notranslate"><span class="pre">message</span></code> is printed to error output and the application aborts.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">Unreachable</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">value</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">ASAP_ASSERT_UNREACHABLE</span><span class="p">(</span><span class="s">&quot;unreachable code&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The assertion is ignored if the contract checking build mode is <code class="docutils literal notranslate"><span class="pre">OFF</span></code>. </p>
+</div>
+</dd></dl>
 
 </section>
 <section id="audit-mode-macros">
@@ -433,7 +524,9 @@ not honored.</p></td>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cond</strong> – an expression, that specifies the predicate of the contract. </p></li>
+<li><p><strong>condition</strong> – an expression, that specifies the predicate of the contract. </p></li>
+<li><p><strong>message</strong> – an optional description message. </p></li>
+<li><p><strong>return_value</strong> – an optional return value if the macro is in function that requires one. </p></li>
 </ul>
 </dd>
 </dl>
@@ -451,7 +544,9 @@ not honored.</p></td>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cond</strong> – an expression, that specifies the predicate of the contract. </p></li>
+<li><p><strong>condition</strong> – an expression, that specifies the predicate of the contract. </p></li>
+<li><p><strong>message</strong> – an optional description message. </p></li>
+<li><p><strong>return_value</strong> – an optional return value if the macro is in function that requires one. </p></li>
 </ul>
 </dd>
 </dl>
@@ -469,7 +564,9 @@ not honored.</p></td>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cond</strong> – an expression, that specifies the predicate of the contract. </p></li>
+<li><p><strong>condition</strong> – an expression, that specifies the predicate of the contract. </p></li>
+<li><p><strong>message</strong> – an optional description message. </p></li>
+<li><p><strong>return_value</strong> – an optional return value if the macro is in function that requires one. </p></li>
 </ul>
 </dd>
 </dl>
