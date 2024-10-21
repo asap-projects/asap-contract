@@ -28,7 +28,7 @@
 #include <functional>
 #include <sstream>
 
-#include <contract/asap_contract_export.h>
+#include <asap/contract/api_export.h>
 
 // -----------------------------------------------------------------------------
 // Types used to implement the contract checking macros/apis

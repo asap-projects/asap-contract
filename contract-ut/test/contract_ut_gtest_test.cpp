@@ -9,8 +9,8 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
-#include <contract/ut/framework.h>
-#include <contract/ut/gtest.h>
+#include <asap/contract/ut/framework.h>
+#include <asap/contract/ut/gtest.h>
 
 using asap::contract::testing::TestAssertDefault;
 using asap::contract::testing::TestEnsureDefault;

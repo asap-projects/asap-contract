@@ -4,10 +4,10 @@
 // SPDX-License-Identifier: BSD-3-Clause
 //===----------------------------------------------------------------------===//
 
-#include "contract/contract.h"
-
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
+
+#include <asap/contract/contract.h>
 
 using ::testing::IsNull;
 using ::testing::NotNull;

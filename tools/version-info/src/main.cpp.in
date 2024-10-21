@@ -9,7 +9,7 @@
 #include <@META_PROJECT_ID_LOWER@/version.h>
 
 // clang-format off
-using namespace @META_PROJECT_ID_LOWER@::info;
+using namespace asap::contract::info; // override the default template
 // clang-format on
 
 auto main(int /*argc*/, char ** /*argv*/) -> int {

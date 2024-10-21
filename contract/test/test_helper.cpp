@@ -6,7 +6,7 @@
 
 #include "test_helper.h"
 
-#include <contract/contract.h>
+#include <asap/contract/contract.h>
 
 namespace asap::contract::testing {
 

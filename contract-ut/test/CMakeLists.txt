@@ -11,7 +11,7 @@
 # If running with google sanitizers, skill all these targets as they are abort
 # and segmentation fault tests that do not make sense to run under sanitizers
 if(ASAP_WITH_GOOGLE_ASAN OR ASAP_WITH_GOOGLE_UBSAN OR ASAP_WITH_GOOGLE_TSAN)
-    return()
+  return()
 endif()
 
 # ------------------------------------------------------------------------------
@@ -34,8 +34,9 @@ asap_add_test(
   "contract_ut_gtest_test.cpp"
   "main.cpp"
   LINK
-  asap::contract-ut
-  asap::common
+  asap.common
+  asap.contract
+  asap.contract-ut
   gtest
   gmock
   COMMENT

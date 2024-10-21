@@ -8,8 +8,8 @@
 
 #include <gtest/gtest.h>
 
-#include <common/platform.h>
-#include <contract/contract.h>
+#include <asap/common/platform.h>
+#include <asap/contract/contract.h>
 
 using asap::contract::testing::TestAssertAudit;
 using asap::contract::testing::TestAssertDefault;

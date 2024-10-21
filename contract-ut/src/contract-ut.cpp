@@ -13,8 +13,8 @@
 #include <csetjmp>
 #include <iostream>
 
-#include <contract/contract.h>
-#include <contract/ut/framework.h>
+#include <asap/contract/contract.h>
+#include <asap/contract/ut/framework.h>
 
 namespace asap::contract {
 

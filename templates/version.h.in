@@ -6,23 +6,24 @@
 
 #pragma once
 
-namespace @META_PROJECT_ID_LOWER@ {
-  namespace info {
+namespace asap {
+  namespace contract {
+    namespace info {
 
-    constexpr auto cProjectName = "@META_PROJECT_NAME@";
-    constexpr auto cProjectDescription = "@META_PROJECT_DESCRIPTION@";
+      constexpr auto cProjectName = "@META_PROJECT_NAME@";
+      constexpr auto cProjectDescription = "@META_PROJECT_DESCRIPTION@";
 
-    constexpr auto cAuthorOrganization = "@META_AUTHOR_ORGANIZATION@";
-    constexpr auto cAuthorDomain = "@META_AUTHOR_DOMAIN@";
-    constexpr auto cAuthor = "@META_AUTHOR_MAINTAINER@";
+      constexpr auto cAuthorOrganization = "@META_AUTHOR_ORGANIZATION@";
+      constexpr auto cAuthorDomain = "@META_AUTHOR_DOMAIN@";
+      constexpr auto cAuthor = "@META_AUTHOR_MAINTAINER@";
 
-    constexpr auto cVersionMajor = @META_VERSION_MAJOR@;
-    constexpr auto cVersionMinor = @META_VERSION_MINOR@;
-    constexpr auto cVersionPatch = @META_VERSION_PATCH@;
-    constexpr auto cVersionRevision = "@META_VERSION_REVISION@";
+      constexpr auto cVersionMajor = @META_VERSION_MAJOR@;
+      constexpr auto cVersionMinor = @META_VERSION_MINOR@;
+      constexpr auto cVersionPatch = @META_VERSION_PATCH@;
+      constexpr auto cVersionRevision = "@META_VERSION_REVISION@";
 
-    constexpr auto cVersion = "@META_VERSION@";
-    constexpr auto cNameVersion = "@META_NAME_VERSION@";
-
-  } // namespace info
+      constexpr auto cVersion = "@META_VERSION@";
+      constexpr auto cNameVersion = "@META_NAME_VERSION@";
+    } // namespace info
+  } // namespace contract
 } // Namespace @META_PROJECT_ID_LOWER@

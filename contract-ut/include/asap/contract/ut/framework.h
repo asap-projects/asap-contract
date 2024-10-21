@@ -14,7 +14,7 @@
 
 #include <csetjmp>
 
-#include <contract-ut/asap_contract-ut_export.h>
+#include <asap/contract-ut/api_export.h>
 
 namespace asap::contract {
 

@@ -38,7 +38,7 @@ include(GetGitRevisionDescription)
 get_git_head_revision(GIT_REFSPEC GIT_SHA1)
 string(SUBSTRING "${GIT_SHA1}" 0 12 GIT_REV)
 if(NOT GIT_SHA1)
-    set(GIT_REV "0")
+  set(GIT_REV "0")
 endif()
 
 # Meta information about the project
@@ -53,12 +53,8 @@ set(META_VERSION_MAJOR "1")
 set(META_VERSION_MINOR "0")
 set(META_VERSION_PATCH "2")
 set(META_VERSION_REVISION "${GIT_REV}")
-set(META_VERSION
-    "${META_VERSION_MAJOR}.${META_VERSION_MINOR}.${META_VERSION_PATCH}"
-)
-set(META_NAME_VERSION
-    "${META_PROJECT_NAME} v${META_VERSION} (${META_VERSION_REVISION})"
-)
+set(META_VERSION "${META_VERSION_MAJOR}.${META_VERSION_MINOR}.${META_VERSION_PATCH}")
+set(META_NAME_VERSION "${META_PROJECT_NAME} v${META_VERSION} (${META_VERSION_REVISION})")
 # cmake-format: on
 
 string(MAKE_C_IDENTIFIER ${META_PROJECT_NAME} META_PROJECT_ID)
@@ -67,10 +63,10 @@ string(TOLOWER ${META_PROJECT_ID} META_PROJECT_ID_LOWER)
 
 # Determine if this is built as a subproject  or if it is the master project.
 if(NOT DEFINED ${META_PROJECT_ID}_IS_MASTER_PROJECT)
-    set(${META_PROJECT_ID}_IS_MASTER_PROJECT OFF)
-    if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
-        set(${META_PROJECT_ID}_IS_MASTER_PROJECT ON)
-    endif()
+  set(${META_PROJECT_ID}_IS_MASTER_PROJECT OFF)
+  if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
+    set(${META_PROJECT_ID}_IS_MASTER_PROJECT ON)
+  endif()
 endif()
 
 # Push the project on the hierarchy stack after we have determined if it is a
@@ -277,7 +273,7 @@ endif()
 # ------------------------------------------------------------------------------
 
 if(APPLE)
-    set(CMAKE_MACOSX_RPATH ON)
+  set(CMAKE_MACOSX_RPATH ON)
 endif()
 
 # Set runtime path
@@ -287,7 +283,7 @@ set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH FALSE)
 
 if(NOT SYSTEM_DIR_INSTALL)
-    set(CMAKE_INSTALL_RPATH "$ORIGIN/${ASAP_INSTALL_LIB}")
+  set(CMAKE_INSTALL_RPATH "$ORIGIN/${ASAP_INSTALL_LIB}")
 endif()
 
 # ------------------------------------------------------------------------------

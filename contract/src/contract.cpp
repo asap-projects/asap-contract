@@ -15,7 +15,7 @@
 #include <iostream>
 #include <memory>
 
-#include <contract/contract.h>
+#include <asap/contract/contract.h>
 
 namespace asap::contract {
 
