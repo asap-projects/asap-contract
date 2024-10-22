@@ -81,15 +81,15 @@ asap_push_project(${META_PROJECT_NAME})
 # gersemi: off
 set(OPTIONS_LIST
   BUILD_SHARED_LIBS        "Build shared instead of static libraries." ON
-  ASAP_BUILD_TESTS         "Setup target to build and run tests." OFF
-  ASAP_BUILD_EXAMPLES      "Setup target to build the examples." OFF
-  ASAP_BUILD_DOCS          "Setup target to build the documentation." OFF
+  ASAP_BUILD_TESTS         "Setup target to build and run tests." ON
+  ASAP_BUILD_EXAMPLES      "Setup target to build the examples." ON
+  ASAP_BUILD_DOCS          "Setup target to build the documentation." ON
   ASAP_WITH_GOOGLE_ASAN    "Instrument code with address sanitizer" OFF
   ASAP_WITH_GOOGLE_UBSAN   "Instrument code with undefined behavior sanitizer" OFF
   ASAP_WITH_GOOGLE_TSAN    "Instrument code with thread sanitizer" OFF
   ASAP_WITH_VALGRIND       "Instrument code with valgrind profilers" OFF
-  ASAP_WITH_DOXYGEN        "Create targets for doxygen api docs" OFF
-  ASAP_WITH_SPHINX         "Create targets for sphinx docs" OFF
+  ASAP_WITH_DOXYGEN        "Create targets for doxygen api docs" ON
+  ASAP_WITH_SPHINX         "Create targets for sphinx docs" ON
   ASAP_WITH_CLANG_FORMAT   "Create targets for clang-format" ON
   ASAP_WITH_CLANG_TIDY     "Create targets for clang-tidy" ON
   USE_CCACHE               "Enable caching of compiled artifacts using ccache" OFF
