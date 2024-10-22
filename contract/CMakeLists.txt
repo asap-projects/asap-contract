@@ -85,7 +85,7 @@ endif()
 # API Documentation
 # ------------------------------------------------------------------------------
 
-if(ASAP_WITH_DOXYGEN)
+if(ASAP_BUILD_DOCS AND ASAP_WITH_DOXYGEN)
   asap_with_doxygen(
     MODULE_NAME
     ${MODULE_TARGET_NAME}
